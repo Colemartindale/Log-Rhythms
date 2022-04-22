@@ -1,3 +1,14 @@
 body {
     background-color: black;
 }
+
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid .drum-row {
+    display: flex;
+    justify-content: center;
+}
