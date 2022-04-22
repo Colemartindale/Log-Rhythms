@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const button2 = document.getElementById('button2');
     const button3 = document.getElementById('button3');
     console.log(audioCtx);
+    let audio1 = new Audio()
     let audio2 = new Audio();
      
     audio1.src = '../assets/Fox/HIYAAA.wav';
@@ -15,27 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     button2.addEventListener('click', function(){
         audio2.play()
     })
-    button3.addEventListener('click', playSound);
-    function playSound() {
-        const oscillator = audioCtx.createOscillator();
-        oscillator.connect(audioCtx.destination);
-        oscillator.type = 'sawtooth';
-        oscillator.start();
-        setTimeout(function(){
-            oscillator.stop();
-        }, 1000)
-    }
-    
-
-    audio1.addEventListener('playing', function(){
-        console.log('playing')
-    })
-    audio1.addEventListener('ended', function(){
-        console.log('ended')
-    })
-
-
-
 
 
     const container = document.getElementById('container');

@@ -4,11 +4,75 @@ body {
 
 .grid {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 
-.grid .drum-row {
+.row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.row > label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin: 4px;
+}
+
+.kick-checkbox-label .checkbox-custom-tone {
+    position: absolute;
+    height: 20px; 
+    width: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
+}
+
+.snare-checkbox-label .checkbox-custom-tone {
+    position: absolute;
+    height: 20px; 
+    width: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
+}
+
+.hi-hat-checkbox-label .checkbox-custom-tone {
+    position: absolute;
+    height: 20px; 
+    width: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
+}
+
+.tom1-checkbox-label .checkbox-custom-tone {
+    position: absolute;
+    height: 20px; 
+    width: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
+}
+
+.tom2-checkbox-label .checkbox-custom-tone {
+    position: absolute;
+    height: 20px; 
+    width: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
+}
+
+.crash-checkbox-label .checkbox-custom-tone {
+    position: absolute;
+    height: 20px; 
+    width: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
 }
