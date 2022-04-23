@@ -12,805 +12,154 @@
   </head>
 
   <body>
-    <div id="container">
-      <canvas id="canvas1"></canvas>
-      <audio id="audio1" controls></audio>
+
+    <div class="title-logo-container">
+      <h1>Suave Sequences</h1>
+      <button>Suave Sequences</button>
     </div>
 
+    <div class="audio-visiualizer">
 
-      <button id="button1">HIYAAAA</button>
-      <button id="button2">EEEYAA</button>
-      <button id="button3">test</button>
+    </div>
 
-      <div class="grid">
+    <div class="slider-container">
+      <input type="range" min="40" max="200" value="120" class="tempo-slider">
+    </div>
+
+    <div class="dropdown-container">
+      <button onclick="myFunction()" class="dropbtn">Drum Kits</button>
+      <div class="drumkits">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+    <div class="sequence-grid">
+      <div class="kick-container">
         <div class="row">
           <label class="kick-checkbox-label">
             <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
           </label>
           <label class="kick-checkbox-label">
             <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
           </label>
           <label class="kick-checkbox-label">
             <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
           </label>
           <label class="kick-checkbox-label">
             <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="kick-checkbox-label">
-            <input type="checkbox" class="kick">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-        </div>
-        <div class="row">
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="snare-checkbox-label">
-            <input type="checkbox" class="snare">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-        </div>
-        <div class="row">
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" class="hi-hat">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-        </div>
-        <div class="row">
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom1-checkbox-label">
-            <input type="checkbox" class="tom1">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-        </div>
-        <div class="row">
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="tom2-checkbox-label">
-            <input type="checkbox" class="tom2">
-          </label>
-        </div>
-        <div class="row">
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" class="crash">
-            <span class='checkbox-custom-tone'></span>
-          </label>
-          
+          </label>                
         </div>
       </div>
+      <div class="row">
+        <label class="snare-checkbox-label">
+          <input type="checkbox" class="snare">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="snare-checkbox-label">
+          <input type="checkbox" class="snare">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="snare-checkbox-label">
+          <input type="checkbox" class="snare">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="snare-checkbox-label">
+          <input type="checkbox" class="snare">
+          <span class='checkbox-custom-tone'></span>
+        </label>       
+      </div>
+      <div class="row">
+        <label class="hi-hat-checkbox-label">
+          <input type="checkbox" class="hi-hat">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="hi-hat-checkbox-label">
+          <input type="checkbox" class="hi-hat">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="hi-hat-checkbox-label">
+          <input type="checkbox" class="hi-hat">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="hi-hat-checkbox-label">
+          <input type="checkbox" class="hi-hat">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+      </div>
+      <div class="row">
+        <label class="tom1-checkbox-label">
+          <input type="checkbox" class="tom1">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="tom1-checkbox-label">
+          <input type="checkbox" class="tom1">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="tom1-checkbox-label">
+          <input type="checkbox" class="tom1">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="tom1-checkbox-label">
+          <input type="checkbox" class="tom1">
+          <span class='checkbox-custom-tone'></span>
+        </label>          
+      </div>
+      <div class="row">
+        <label class="tom2-checkbox-label">
+          <input type="checkbox" class="tom2">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="tom2-checkbox-label">
+          <input type="checkbox" class="tom2">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="tom2-checkbox-label">
+          <input type="checkbox" class="tom2">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="tom2-checkbox-label">
+          <input type="checkbox" class="tom2">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+      </div>
+      <div class="row">
+        <label class="crash-checkbox-label">
+          <input type="checkbox" class="crash">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="crash-checkbox-label">
+          <input type="checkbox" class="crash">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="crash-checkbox-label">
+          <input type="checkbox" class="crash">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+        <label class="crash-checkbox-label">
+          <input type="checkbox" class="crash">
+          <span class='checkbox-custom-tone'></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="playback-controls"> 
+      <button class="play">Play</button>
+      <button class="pause">Pause</button>
+      <button class="reset">Reset</button>
+    </div>
+
+    <div class="nav-links">
+      <button class="github">github</button>
+    </div>
+
+    <div id="container">
+      <canvas id="canvas1"></canvas>
+      <button id="button1">HIYAAAA</button>
+      <button id="button2">EEEYAA</button>
+    </div>
   </body>
-
-
 
 </html>
 
