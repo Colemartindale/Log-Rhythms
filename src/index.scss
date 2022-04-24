@@ -1,4 +1,35 @@
 @import "./styles/reset.scss";
-@import "./styles/tempo-slider.scss";
+@import "./styles/slider-dropdown.scss";
 @import "./styles/grid-design.scss";
+@import "./styles/playback-controls.scss";
 
+
+body {
+    background-color: #fea49f;
+}
+
+.title-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00a0a0;
+    margin: auto;
+    width: 35%;
+    height: 150px;
+    border: 1px solid black;
+    margin-top: 2.5%;
+    border-radius: 5px;
+}
+
+.logo {
+    width: 25em;
+}
+// Mountain Shadow Blue: #101357
+
+// Old Makeup Pink: #fea49f
+
+// Goldenrod Yellow: #fbaf08
+
+// Bluebell Light Blue: #00a0a0
+
+// Bold 2019 Green: #007f4f
