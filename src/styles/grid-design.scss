@@ -8,25 +8,27 @@ body {
     align-items: center;
     border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
-    width: 50%;
+    width: 900px;
     margin: auto;
     background-color: #fbaf08;
+    padding: 10px;
 }
 
 .kick-checkbox-label:nth-child(4n) {
     border-right: 1px solid rgba(103, 244, 147, 0.384);
+    
 }
 
 .kick-container {
-    border: solid 1px gray;
-    background-color: rgba(84, 212, 165, 0.514);
+    background-color: #103b57 ;
+    border-radius: 5px;
 }
 
 input[type='checkbox'] {
     appearance: none;
     width: 20px;
     height: 30px;
-    border: 1px solid rgb(194, 191, 191);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 9px;
     cursor: pointer;
 }

@@ -5,31 +5,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" type='image' href="../assets/suave-sequences-logo.png" />
+    <link rel="icon" type='image' href="../assets/logos/LRtablogo.png" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Suave Sequences</title>
+    <title>Log Rhythms</title>
   </head>
 
   <body>
 
     <div class="title-logo-container">
-      <img src="./assets/LRlogofull.png" class="logo">
+      <img src="./assets/logos/LRlogofull.png" class="logo">
     </div>
 
     <div class="audio-visiualizer">
 
     </div>
 
+    
     <div class="slider-dropdown-container">
-      <input type="range" min="40" max="200" value="120" class="tempo-slider">
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Drum Kits</button>
-        <div class="drumkits">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+      
+      <div class="slider-container">
+        <div class="tempo">
+          <span>120 BPM</span>
         </div>
+        <div class="min-val" id="val">40</div>
+        <input type="range" min="40" max="200" value="120" class="slider-input" id="slider">
+        <div class="max-val" id="val">200</div>
+      </div>
+      
+      <div class="dropdown-container">
+         <button class="drum-kits-btn">Drum Kits</button>
+         <div class="dropdown-menu">
+          <a href="#">Rock Kit</a>
+          <a href="#">Electronic  Kit</a>
+          <a href="#">Smash Bros Kit</a>
+         </div>
       </div>
     </div>
 
@@ -48,12 +58,59 @@
           <label class="kick-checkbox-label">
             <input type="checkbox" class="kick">
           </label>                
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>                
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>                
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>                
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>
+          <label class="kick-checkbox-label">
+            <input type="checkbox" class="kick">
+          </label>                
         </div>
       </div>
       <div class="row">
         <label class="snare-checkbox-label">
           <input type="checkbox" class="snare">
-          <span class='checkbox-custom-tone'></span>
         </label>
         <label class="snare-checkbox-label">
           <input type="checkbox" class="snare">

@@ -62,7 +62,107 @@ table {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 50%;
+  width: 900px;
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007f4f;
+  border: 1px solid black;
+  border-radius: 30px 10px 30px 10px;
+  height: 50px;
+  width: 40%;
+  text-align: center;
+}
+
+.slider-container #slider {
+  appearance: none;
+  background-color: black;
+  border-radius: 5px;
+  height: 4px;
+  width: 80%;
+  line-height: 2;
+}
+
+.slider-container #slider::-webkit-slider-thumb {
+  position: relative;
+  appearance: none;
+  background-color: black;
+  border: solid 0.5px aliceblue;
+  border-radius: 10px;
+  height: 23px;
+  width: 10px;
+  cursor: pointer;
+}
+
+.slider-container #val {
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.tempo span {
+  position: absolute;
+  left: 36%;
+  top: -14px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 1px 8px 1px 8px;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.drum-kits-btn {
+  background-color: #007f4f;
+  border-radius: 10px 30px 10px 30px;
+  border: 1px solid black;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: monospace;
+  height: 50px;
+  width: 160px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: #0b0b0b 1px 1px 1px 1px;
+}
+
+.dropdown-menu {
+  display: flex;
+  left: 18px;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  position: absolute;
+  background-color: antiquewhite;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0;
+  opacity: 0;
+  pointer-events: none;
+  width: 80%;
+  margin-top: 5px;
+}
+
+.dropdown-menu a {
+  color: black;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.dropdown-container > .drum-kits-btn:focus + .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 body {
@@ -76,9 +176,10 @@ body {
   align-items: center;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 5px;
-  width: 50%;
+  width: 900px;
   margin: auto;
   background-color: #fbaf08;
+  padding: 10px;
 }
 
 .kick-checkbox-label:nth-child(4n) {
@@ -86,15 +187,15 @@ body {
 }
 
 .kick-container {
-  border: solid 1px gray;
-  background-color: rgba(84, 212, 165, 0.514);
+  background-color: #103b57;
+  border-radius: 5px;
 }
 
 input[type=checkbox] {
   appearance: none;
   width: 20px;
   height: 30px;
-  border: 1px solid rgb(194, 191, 191);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 9px;
   cursor: pointer;
 }
@@ -138,13 +239,14 @@ body {
   align-items: center;
   background-color: #00a0a0;
   margin: auto;
-  width: 35%;
+  width: 475px;
   height: 150px;
   border: 1px solid black;
   margin-top: 2.5%;
+  margin-bottom: 20px;
   border-radius: 5px;
 }
 
 .logo {
-  width: 25em;
+  width: 375px;
 }
