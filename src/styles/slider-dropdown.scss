@@ -34,11 +34,14 @@
     position: relative;
     appearance: none;
     background-color: black;
-    border: solid 0.5px aliceblue;    
     border-radius: 10px;
     height: 23px;
     width: 10px;
     cursor: pointer;
+}
+
+.slider-container #slider::-webkit-slider-thumb:hover {
+    border: solid 0.5px aliceblue;    
 }
 
 .slider-container #val {
@@ -92,6 +95,10 @@
     box-shadow: #0b0b0b 1px 1px 1px 1px;
 }
 
+.drum-kits-btn:hover {
+    background-color: #006a41;
+}
+
 .dropdown-menu {
     display: flex;
     left: 18px;
@@ -107,6 +114,7 @@
     pointer-events: none;
     width: 80%;
     margin-top: 5px;
+    z-index: 2;
 }
 
 .dropdown-menu a {

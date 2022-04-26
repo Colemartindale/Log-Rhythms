@@ -13,3 +13,67 @@
     margin: auto;
     margin-top: 10px;
 }
+
+.play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #007f4f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play:hover {
+    background-color: #006a41;
+}
+
+.pause {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #007f4f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pause:hover {
+    background-color: #006a41;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #007f4f;
+    border-radius: 5px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: #006a41;
+}
+
+.play img{
+    width: 35px;
+}
+
+.pause img {
+    width: 35px;
+}
+
+
+// Mountain Shadow Blue: #101357
+
+// Old Makeup Pink: #fea49f
+
+// Goldenrod Yellow: #fbaf08
+
+// Bluebell Light Blue: #00a0a0
+
+// Bold 2019 Green: #007f4f

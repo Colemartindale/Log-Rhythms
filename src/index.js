@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     button3.addEventListener('click', function(){
         audio3.play()
     })
+
+    
    
 
     const slider = document.getElementById('slider');
@@ -38,4 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function draw() {
+        ctx.canvas.width  = window.innerWidth;
+        ctx.canvas.height = window.innerHeight;
+        ctx.beginPath();       // Start a new path
+        ctx.moveTo(30, 50);    // Move the pen to (30, 50)
+        ctx.lineTo(150, 100);  // Draw a line to (150, 100)
+        ctx.stroke();   
+    }
+      
 })
