@@ -121,7 +121,15 @@
     z-index: 2;
 }
 
-.dropdown-menu a {
+.dropdown-menu button {
+    appearance: none;
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+    text-decoration: underline;
+	cursor: pointer;
+	outline: inherit;
     color: black;
     font-family: monospace;
     font-weight: 600;

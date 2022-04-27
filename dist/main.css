@@ -164,7 +164,15 @@ table {
   z-index: 2;
 }
 
-.dropdown-menu a {
+.dropdown-menu button {
+  appearance: none;
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: inherit;
   color: black;
   font-family: monospace;
   font-weight: 600;
@@ -389,9 +397,8 @@ input[type=checkbox] {
   align-items: center;
 }
 
-.current-pos {
-  box-shadow: 10 10 10 #000000;
-  background-color: rgb(59, 75, 67);
+input[type=checkbox].current-pos {
+  border: white 1.5px solid;
 }
 
 .playback-controls {
@@ -410,7 +417,7 @@ input[type=checkbox] {
   margin-top: 10px;
 }
 
-.play {
+.play-pause {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -420,11 +427,11 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.play:hover {
+.play-pause:hover {
   background-color: #006a41;
 }
 
-.pause {
+.restart {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,7 +441,7 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.pause:hover {
+.restart:hover {
   background-color: #006a41;
 }
 
@@ -455,12 +462,12 @@ input[type=checkbox] {
   background-color: #006a41;
 }
 
-.play img {
+.play-pause img {
   width: 35px;
 }
 
-.pause img {
-  width: 35px;
+.restart img {
+  width: 32px;
 }
 
 body {

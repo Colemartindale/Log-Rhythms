@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tomDance, clapDance, crashDance
     ];
 
+
     const kickRock = new Tone.Player('../assets/sounds/rock-kit/kick-rock.wav').toDestination();
     const snareRock = new Tone.Player('../assets/sounds/rock-kit/snare-rock.wav').toDestination();
     const hatRock = new Tone.Player('../assets/sounds/rock-kit/hat-rock.wav').toDestination();
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kickRock, snareRock, hatRock,
         tomRock, clapRock, crashRock
     ];
+
 
     const kickFox = new Tone.Player('../assets/sounds/smash-kit/kick-fox.wav').toDestination();
     const snareFox = new Tone.Player('../assets/sounds/smash-kit/snare-fox.wav').toDestination();
@@ -34,14 +36,41 @@ document.addEventListener("DOMContentLoaded", function () {
         tomFox, clapFox, crashFox
     ];
 
+
+    let currentKit;
+    const danceBtn = document.getElementById("dance-kit");
+    const rockBtn = document.getElementById("rock-kit");
+    const foxBtn = document.getElementById("fox-kit");
+    // console.log(rockBtn);
+    foxBtn.addEventListener('click', ()=> {
+        foxBtn.classList.add('fox')
+    })
+    
+    rockBtn.addEventListener('click', ()=> {
+        // currentKit = rockKit;
+        console.log(currentKit, "sup");
+    })
+    
+    danceBtn.addEventListener('click', ()=> {
+        currentKit = danceKit;
+        console.log(currentKit);
+    })
+    console.log(currentKit, "ugh");
+
+    
+    
     const gain = new Tone.Gain(0.1);
-    smashKit.forEach(sound => sound.connect(gain));
     gain.toDestination()
+    smashKit.forEach(sound => sound.connect(gain));
+    rockKit.forEach(sound => sound.connect(gain));
+    danceKit.forEach(sound => sound.connect(gain));
     Tone.Transport.scheduleRepeat(looper, '8n');
     const rows = document.querySelectorAll('#row');
     // console.log($rows);
     let index = 0;
     function looper(time) {
+        let inputs = document.querySelectorAll('#row input');
+        inputs.forEach(input => input.classList.remove("current-pos"));
         let finalRows = []
         rows.forEach((row) => {
             let rowList = row.querySelectorAll("input")
@@ -53,17 +82,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // console.log(Tone.Transport.state)
         for (let i = 0; i < finalRows.length; i++) {
             let sound = smashKit[i];
+            // console.log(sound, "SOUND")
             let row = finalRows[i];
             // console.log(row)
             let input = row[step];
             // console.log(input)
             if (input.checked) sound.start();
             // console.log(index, 'idx')
-
             input.classList.toggle('current-pos');
-            // setTimeout(()=> {
-            //     input.classList.toggle('current-pos');
-            // }, (Tone.Transport.bpm))
         }
         index++;
     }
@@ -71,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     const resetBtn = document.querySelector('.reset');
-    const playBtn = document.querySelector('.play');
-    const pauseBtn = document.querySelector('.pause');
+    const playPauseBtn = document.querySelector('.play-pause');
+    const restartBtn = document.querySelector('.restart');
     const checked = document.querySelectorAll('input');
     const slider = document.getElementById('slider');
 
@@ -81,19 +107,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     resetBtn.addEventListener('click', ()=> {
-        // console.log(checked)
+        index = 0;
         for (let i = 0; i < checked.length; i++) {
             if (checked[i].checked) checked[i].checked = false;        
         };
+        let inputs = document.querySelectorAll('#row input');
+        inputs.forEach(input => input.classList.remove("current-pos"));
     });
 
-    playBtn.addEventListener('click', ()=>{
-        Tone.start();
-        Tone.Transport.start();
+    playPauseBtn.addEventListener('click', ()=>{
+        if (Tone.Transport.state === "stopped") {
+            Tone.start();
+            Tone.Transport.start();
+        } else {
+            Tone.Transport.stop();      
+        }
     });
 
-    pauseBtn.addEventListener('click', ()=>{
+    restartBtn.addEventListener('click', ()=>{
         Tone.Transport.stop();
+        index = 0;
+        let inputs = document.querySelectorAll('#row input');
+        inputs.forEach(input => input.classList.remove("current-pos"));
     });
     
     const kick = document.querySelectorAll('#kick');

@@ -209,10 +209,8 @@ input[type='checkbox'] {
     align-items: center;
 }
 
- .current-pos {
-    box-shadow: 10 10 10  #000000;
-    background-color: rgb(59, 75, 67);
-
+input[type='checkbox'].current-pos {
+    border: white 1.5px solid;
 }
 
 // Mountain Shadow Blue: #101357

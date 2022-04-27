@@ -14,7 +14,7 @@
     margin-top: 10px;
 }
 
-.play {
+.play-pause {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,11 +24,11 @@
     cursor: pointer;
 }
 
-.play:hover {
+.play-pause:hover {
     background-color: #006a41;
 }
 
-.pause {
+.restart {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
     cursor: pointer;
 }
 
-.pause:hover {
+.restart:hover {
     background-color: #006a41;
 }
 
@@ -59,12 +59,12 @@
     background-color: #006a41;
 }
 
-.play img{
+.play-pause img{
     width: 35px;
 }
 
-.pause img {
-    width: 35px;
+.restart img {
+    width: 32px;
 }
 
 

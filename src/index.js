@@ -1,10 +1,7 @@
 import * as sequencer from "./scripts/sequencer";
+import * as dropDown from "./scripts/drop-down";
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-    
-   
 
     const slider = document.getElementById('slider');
     const currentTempo = document.querySelector('.tempo span');
