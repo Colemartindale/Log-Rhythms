@@ -10,6 +10,7 @@
     width: 1000px;
     padding: 10px;
     background-color: #fbaf08;
+    position: relative;
 }
 
 
@@ -211,6 +212,22 @@ input[type='checkbox'] {
 
 input[type='checkbox'].current-pos {
     border: white 1.5px solid;
+}
+
+#current-kit {
+    position: absolute;
+    background-color: antiquewhite;
+    border: solid black 1px;
+    border-radius: 10px;
+    padding: 2px 8px 2px 8px;
+    top: -15px;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 600;
+    height: 20px;
+    width: 115px;
+    text-align: center;
+    box-shadow: 2px 2px 2px black;
 }
 
 // Mountain Shadow Blue: #101357

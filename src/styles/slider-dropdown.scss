@@ -48,6 +48,7 @@
     font-weight: 600;
     font-family: monospace;
     font-size: 18px;
+    
 }
 
 
@@ -62,6 +63,8 @@
     font-family: monospace;
     font-size: 18px;
     font-weight: 600;
+    box-shadow: 2px 2px 2px black;
+
 }
 
  
@@ -105,7 +108,8 @@
 
 .dropdown-menu {
     display: flex;
-    left: 18px;
+    left: -135px;
+    top: -5px;
     justify-content: center;
     align-items: left;
     flex-direction: column;
@@ -114,8 +118,8 @@
     padding: 2px;
     border-radius: 5px;
     box-shadow: 0 2px 5px 0;
+    // display: none;
     opacity: 0;
-    pointer-events: none;
     width: 80%;
     margin-top: 5px;
     z-index: 2;
@@ -135,9 +139,17 @@
     font-weight: 600;
     font-size: 14px;
     padding: 3px;
+    z-index: 3;
+}
+
+.dropdown-menu button:hover {
+    color: #909090;
+    font-size: 16px;
 }
 
 .dropdown-container > .drum-kits-btn:focus + .dropdown-menu {
+    // display: flex; 
     opacity: 1;
-    pointer-events: auto;
+    
+    // z-index: 2;
 }

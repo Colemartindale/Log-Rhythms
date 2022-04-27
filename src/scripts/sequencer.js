@@ -1,6 +1,10 @@
 import * as Tone from 'tone'
+import { Context } from 'tone';
 
 document.addEventListener("DOMContentLoaded", function () {
+    const gain = new Tone.Gain(0.1);
+    gain.toDestination()
+
     const kickDance = new Tone.Player('../assets/sounds/dance-kit/kick-dance.wav').toDestination();
     const snareDance = new Tone.Player('../assets/sounds/dance-kit/snare-dance.wav').toDestination();
     const hatDance = new Tone.Player('../assets/sounds/dance-kit/hat-dance.wav').toDestination();
@@ -11,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kickDance, snareDance, hatDance,
         tomDance, clapDance, crashDance
     ];
-
+    danceKit.forEach(sound => sound.connect(gain));
 
     const kickRock = new Tone.Player('../assets/sounds/rock-kit/kick-rock.wav').toDestination();
     const snareRock = new Tone.Player('../assets/sounds/rock-kit/snare-rock.wav').toDestination();
@@ -23,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kickRock, snareRock, hatRock,
         tomRock, clapRock, crashRock
     ];
+    rockKit.forEach(sound => sound.connect(gain));
 
 
     const kickFox = new Tone.Player('../assets/sounds/smash-kit/kick-fox.wav').toDestination();
@@ -35,35 +40,52 @@ document.addEventListener("DOMContentLoaded", function () {
         kickFox, snareFox, hatFox,
         tomFox, clapFox, crashFox
     ];
+    smashKit.forEach(sound => sound.connect(gain));
 
-
+    
     let currentKit;
     const danceBtn = document.getElementById("dance-kit");
     const rockBtn = document.getElementById("rock-kit");
     const foxBtn = document.getElementById("fox-kit");
-    // console.log(rockBtn);
-    foxBtn.addEventListener('click', ()=> {
-        foxBtn.classList.add('fox')
-    })
+    const dropDown = document.querySelector(".dropdown-menu")
     
-    rockBtn.addEventListener('click', ()=> {
-        // currentKit = rockKit;
-        console.log(currentKit, "sup");
-    })
-    
-    danceBtn.addEventListener('click', ()=> {
-        currentKit = danceKit;
-        console.log(currentKit);
-    })
-    console.log(currentKit, "ugh");
+    const currentKitText = document.getElementById("current-kit");
+    dropDown.addEventListener('click', (e)=> {
+        console.log(e.target.id === "rock-kit");
+        if (e.target.id === "rock-kit") {
+            currentKit = 2;
+            currentKitText.innerHTML="Rock Kit"
+        } else if (e.target.id === "dance-kit") {
+            currentKit = 1;
+            currentKitText.innerHTML="Dance Kit"
+        } else {
+            currentKit = 3;
+            currentKitText.innerHTML="Fox Kit"
+        }
+    });
 
     
+
+    // const container = document.getElementById('container');
+    // const canvas = document.getElementById("canvas");
+    // const ctx = canvas.getContext('2d');
+    // const playerCtx = new Context();
+    // const audioContext = new AudioContext();
+    // console.log(playerCtx);
+    // let audioSrc;
+    // let analyzer;
+
+    // let audio1 = new Audio();
+    // audio1.src = "../assets/sounds/smash-kit/snare-fox.wav"
+    // container.addEventListener('click', () => {
+    //     audio1.play()
+    //     audioSrc = audioContext.createMediaElementSource(audio1);
+    //     analyzer = audioContext.createAnalyser();
+    //     audioSrc.connect(analyzer);
+    // })
     
-    const gain = new Tone.Gain(0.1);
-    gain.toDestination()
-    smashKit.forEach(sound => sound.connect(gain));
-    rockKit.forEach(sound => sound.connect(gain));
-    danceKit.forEach(sound => sound.connect(gain));
+    
+
     Tone.Transport.scheduleRepeat(looper, '8n');
     const rows = document.querySelectorAll('#row');
     // console.log($rows);
@@ -78,10 +100,17 @@ document.addEventListener("DOMContentLoaded", function () {
             finalRows.push(rowList);
         });
         let step = index % 32;
-        console.log(step, 'STEPNERD')
+        console.log(step, 'step')
         // console.log(Tone.Transport.state)
         for (let i = 0; i < finalRows.length; i++) {
-            let sound = smashKit[i];
+            let sound;
+            if (currentKit === 3) {
+                sound = smashKit[i];
+            } else if (currentKit === 2) {
+                sound = rockKit[i];
+            } else {
+                sound = danceKit[i];
+            }
             // console.log(sound, "SOUND")
             let row = finalRows[i];
             // console.log(row)
@@ -93,6 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         index++;
     }
+    // .addEventListener("playing", ()=> {
+    //     console.log('played sound');
+    // })
     // console.log(Tone.Transport.state)
 
     
@@ -102,11 +134,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const checked = document.querySelectorAll('input');
     const slider = document.getElementById('slider');
 
-    slider.addEventListener('change', ()=> {
+    slider.addEventListener('change', () => {
         Tone.Transport.bpm.rampTo(slider.value, 0.1);
     });
 
-    resetBtn.addEventListener('click', ()=> {
+    resetBtn.addEventListener('click', () => {
         index = 0;
         for (let i = 0; i < checked.length; i++) {
             if (checked[i].checked) checked[i].checked = false;        
@@ -115,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputs.forEach(input => input.classList.remove("current-pos"));
     });
 
-    playPauseBtn.addEventListener('click', ()=>{
+    playPauseBtn.addEventListener('click', () => {
         if (Tone.Transport.state === "stopped") {
             Tone.start();
             Tone.Transport.start();
@@ -124,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    restartBtn.addEventListener('click', ()=>{
+    restartBtn.addEventListener('click', () => {
         Tone.Transport.stop();
         index = 0;
         let inputs = document.querySelectorAll('#row input');
@@ -145,15 +177,25 @@ document.addEventListener("DOMContentLoaded", function () {
     function clicker() {
         for (let i = 0; i < 6; i++) {
             let drum = drumIDs[i];
-            let sound = smashKit[i]
+            let sound;
+            // console.log(currentKit)
             for (let j = 0; j < 32; j++) {
                 drum[j].addEventListener('click', () => {
+                    if (currentKit === 3) {
+                        sound = smashKit[i];
+                    } else if (currentKit === 2) {
+                        sound = rockKit[i];
+                    } else {
+                        sound = danceKit[i];
+                    }
                     sound.start();
                 });
             };
-        }
+        };
     };
     clicker();
+
+
     
 })
 

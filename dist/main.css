@@ -118,6 +118,7 @@ table {
   font-family: monospace;
   font-size: 18px;
   font-weight: 600;
+  box-shadow: 2px 2px 2px black;
 }
 
 .dropdown-container {
@@ -148,7 +149,8 @@ table {
 
 .dropdown-menu {
   display: flex;
-  left: 18px;
+  left: -135px;
+  top: -5px;
   justify-content: center;
   align-items: left;
   flex-direction: column;
@@ -158,7 +160,6 @@ table {
   border-radius: 5px;
   box-shadow: 0 2px 5px 0;
   opacity: 0;
-  pointer-events: none;
   width: 80%;
   margin-top: 5px;
   z-index: 2;
@@ -178,11 +179,16 @@ table {
   font-weight: 600;
   font-size: 14px;
   padding: 3px;
+  z-index: 3;
+}
+
+.dropdown-menu button:hover {
+  color: #909090;
+  font-size: 16px;
 }
 
 .dropdown-container > .drum-kits-btn:focus + .dropdown-menu {
   opacity: 1;
-  pointer-events: auto;
 }
 
 .audio-visualizer {
@@ -202,6 +208,7 @@ table {
   width: 1000px;
   padding: 10px;
   background-color: #fbaf08;
+  position: relative;
 }
 
 #border {
@@ -401,6 +408,22 @@ input[type=checkbox].current-pos {
   border: white 1.5px solid;
 }
 
+#current-kit {
+  position: absolute;
+  background-color: antiquewhite;
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: 2px 8px 2px 8px;
+  top: -15px;
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: 600;
+  height: 20px;
+  width: 115px;
+  text-align: center;
+  box-shadow: 2px 2px 2px black;
+}
+
 .playback-controls {
   display: flex;
   justify-content: center;
@@ -415,6 +438,7 @@ input[type=checkbox].current-pos {
   align-items: center;
   margin: auto;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .play-pause {
@@ -476,6 +500,7 @@ body {
 
 .title-logo-container {
   display: flex;
+  background-size: auto;
   justify-content: center;
   align-items: center;
   background-color: #00a0a0;
@@ -484,10 +509,14 @@ body {
   height: 150px;
   border: 1px solid black;
   margin-top: 2.5%;
-  margin-bottom: 20px;
+  margin-bottom: 10%;
   border-radius: 5px;
 }
 
 .logo {
   width: 375px;
+}
+
+#container {
+  border: 1px solid black;
 }

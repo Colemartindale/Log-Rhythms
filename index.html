@@ -12,15 +12,15 @@
   </head>
 
   <body>
-    <canvas id="canvas"></canvas>
+    <!-- <canvas id="canvas"></canvas> -->
 
     <div class="title-logo-container">
       <img src="./assets/logos/LRlogofull.png" class="logo">
     </div>
 
-    <div class="audio-visualizer">
-
-    </div>
+    <!-- <div class="audio-visualizer" id="container">
+      <canvas id="canvas"></canvas>
+    </div> -->
 
     
     <div class="slider-dropdown-container">
@@ -44,6 +44,7 @@
     </div>
 
     <div class="sequence-grid">
+      <div id="current-kit">Rock Kit</div>
       <div class="kick-row" id="row">
         <img src="./assets/icons/kick-icon.png" class="inst-icon">
         <div id="border">
@@ -281,52 +282,10 @@
             <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-        </div>
-        <div id="border">
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-        </div>
-        <div id="border">
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-        </div>
-        <div id="border">
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
             <input type="checkbox" id="hi-hat" checked>
@@ -340,7 +299,7 @@
             <input type="checkbox" id="hi-hat">
           </label>
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
             <input type="checkbox" id="hi-hat">
@@ -348,27 +307,13 @@
         </div>
         <div id="border">
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
             <input type="checkbox" id="hi-hat">
           </label>
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-        </div>
-        <div id="border">
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
-          </label>
-          <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
             <input type="checkbox" id="hi-hat">
@@ -376,16 +321,72 @@
         </div>
         <div id="border">
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
             <input type="checkbox" id="hi-hat">
           </label>
           <label class="hi-hat-checkbox-label">
-            <input type="checkbox" id="hi-hat">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+        </div>
+        <div id="border">
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+        </div>
+        <div id="border">
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
           <label class="hi-hat-checkbox-label">
             <input type="checkbox" id="hi-hat">
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat">
+          </label>
+        </div>
+        <div id="border">
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat">
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat">
+          </label>
+        </div>
+        <div id="border">
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat">
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
+          </label>
+          <label class="hi-hat-checkbox-label">
+            <input type="checkbox" id="hi-hat" checked>
           </label>
         </div>
       </div>
@@ -393,7 +394,7 @@
         <img src="./assets/icons/tom-icon.png" class="inst-icon">
         <div id="border">
           <label class="tom-checkbox-label">
-            <input type="checkbox" id="tom">
+            <input type="checkbox" id="tom" >
           </label>
           <label class="tom-checkbox-label">
             <input type="checkbox" id="tom">
@@ -508,7 +509,21 @@
         <img src="./assets/icons/clap-icon.png" class="inst-icon">
         <div id="border">
           <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" checked>
+          </label>
+          <label class="clap-checkbox-label">
             <input type="checkbox" id="clap">
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap">
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" checked>
+          </label>
+        </div>
+        <div id="border">
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" checked>
           </label>
           <label class="clap-checkbox-label">
             <input type="checkbox" id="clap">
@@ -522,21 +537,7 @@
         </div>
         <div id="border">
           <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-        </div>
-        <div id="border">
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap" >
+            <input type="checkbox" id="clap" checked>
           </label>
           <label class="clap-checkbox-label">
             <input type="checkbox" id="clap">
@@ -550,16 +551,16 @@
         </div>
         <div id="border">
           <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap" >
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap" >
-          </label>
-          <label class="clap-checkbox-label">
             <input type="checkbox" id="clap" checked>
           </label>
           <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap" checked>
+            <input type="checkbox" id="clap" >
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap">
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" >
           </label>
         </div>
         <div id="border">
@@ -573,24 +574,13 @@
             <input type="checkbox" id="clap">
           </label>
           <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
+            <input type="checkbox" id="clap" checked>
           </label>
         </div>
         <div id="border">
           <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
+            <input type="checkbox" id="clap" checked>
           </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-        </div>
-        <div id="border">
           <label class="clap-checkbox-label">
             <input type="checkbox" id="clap">
           </label>
@@ -600,19 +590,30 @@
           <label class="clap-checkbox-label">
             <input type="checkbox" id="clap" >
           </label>
+        </div>
+        <div id="border">
           <label class="clap-checkbox-label">
             <input type="checkbox" id="clap" checked>
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap">
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" >
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" checked >
           </label>
         </div>
         <div id="border">
           <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
-            <input type="checkbox" id="clap">
-          </label>
-          <label class="clap-checkbox-label">
             <input type="checkbox" id="clap" checked>
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap">
+          </label>
+          <label class="clap-checkbox-label">
+            <input type="checkbox" id="clap" >
           </label>
           <label class="clap-checkbox-label">
             <input type="checkbox" id="clap" checked>
@@ -623,27 +624,13 @@
         <img src="./assets/icons/crash-icon.png" class="inst-icon">
         <div id="border">
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash" >
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash"checked>
-          </label>
-          <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
-          </label>
-        </div>
-        <div id="border">
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash">
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
@@ -651,27 +638,13 @@
         </div>
         <div id="border">
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash">
-          </label>
-        </div>
-        <div id="border">
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash">
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash" >
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
@@ -679,27 +652,13 @@
         </div>
         <div id="border">
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash">
-          </label>
-        </div>
-        <div id="border">
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash">
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash" >
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
@@ -707,13 +666,27 @@
         </div>
         <div id="border">
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash" >
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash" checked>
+          </label>
+        </div>
+        <div id="border">
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash" >
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash" >
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
@@ -721,16 +694,44 @@
         </div>
         <div id="border">
           <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash" checked>
+            <input type="checkbox" id="crash" >
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash" >
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+        </div>
+        <div id="border">
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash" >
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+        </div>
+        <div id="border">
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
+          </label>
+          <label class="crash-checkbox-label">
+            <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash">
           </label>
           <label class="crash-checkbox-label">
             <input type="checkbox" id="crash" checked>
-          </label>
-          <label class="crash-checkbox-label">
-            <input type="checkbox" id="crash">
           </label>
         </div>
       </div>

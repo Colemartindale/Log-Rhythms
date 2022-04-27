@@ -1,5 +1,6 @@
 import * as sequencer from "./scripts/sequencer";
 import * as dropDown from "./scripts/drop-down";
+import * as audioVisualizer from "./scripts/audio-visualizer";
 
 document.addEventListener("DOMContentLoaded", function () {
 

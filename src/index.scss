@@ -7,10 +7,13 @@
 
 body {
     background-color: #fea49f;
+
 }
 
 .title-logo-container {
     display: flex;
+    // background-image: linear-gradient(to bottom right, #fbaf08, #00a0a0, #373b97, #007f4f);
+    background-size: auto;
     justify-content: center;
     align-items: center;
     background-color: #00a0a0;
@@ -19,12 +22,16 @@ body {
     height: 150px;
     border: 1px solid black;
     margin-top: 2.5%;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
     border-radius: 5px;
 }
 
 .logo {
     width: 375px;
+}
+
+#container {
+    border: 1px solid black;
 }
 // Mountain Shadow Blue: #101357
 
