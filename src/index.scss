@@ -1,5 +1,6 @@
 @import "./styles/reset.scss";
 @import "./styles/slider-dropdown.scss";
+@import "./styles/audio-visualizer.scss";
 @import "./styles/grid-design.scss";
 @import "./styles/playback-controls.scss";
 
@@ -34,3 +35,7 @@ body {
 // Bluebell Light Blue: #00a0a0
 
 // Bold 2019 Green: #007f4f
+
+#row #kick1 {
+    // background-color: yellow;
+}

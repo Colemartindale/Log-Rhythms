@@ -126,16 +126,93 @@ input[type='checkbox'] {
 }
 
 .kick-checkbox-label input:checked {
-    background-color: aquamarine;
+    background-color: #fbaf08;
 }
 
 .kick-checkbox-label input:hover {
-    background-color: rgb(212, 246, 235);
+    background-color: #ffe4ab;
 }
 
 .kick-checkbox-label input:checked:hover {
-    background-color: aquamarine;
-    box-shadow: 0 0 0.25em 0 red;
+    background-color: #fbaf08;
+    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+}
+
+.hi-hat-checkbox-label input:checked {
+    background-color: antiquewhite;
+}
+
+.hi-hat-checkbox-label input:hover {
+    background-color: rgb(255, 226, 189);
+}
+
+.hi-hat-checkbox-label input:checked:hover {
+    background-color: antiquewhite;
+    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+}
+
+.crash-checkbox-label input:checked {
+    background-color: #fbaf08;
+}
+
+.crash-checkbox-label input:hover {
+    background-color: #ffe4ab;
+}
+
+.crash-checkbox-label input:checked:hover {
+    background-color: #fbaf08;
+    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+}
+
+.snare-checkbox-label input:checked {
+    background-color: rgb(135, 79, 181);
+}
+
+.snare-checkbox-label input:hover {
+    background-color: rgb(159, 134, 179);
+}
+
+.snare-checkbox-label input:checked:hover {
+    background-color: rgb(135, 79, 181);
+    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+}
+
+.tom-checkbox-label input:checked {
+    background-color: #fbaf08;
+}
+
+.tom-checkbox-label input:hover {
+    background-color: #597c6f;
+}
+
+.tom-checkbox-label input:checked:hover {
+    background-color: #fbaf08;
+    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+}
+
+.clap-checkbox-label input:checked {
+    background-color: rgb(135, 79, 181);
+}
+
+.clap-checkbox-label input:hover {
+    background-color: rgb(159, 134, 179);
+}
+
+.clap-checkbox-label input:checked:hover {
+    background-color: rgb(135, 79, 181);
+    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+}
+
+.kick-checkbox-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .current-pos {
+    box-shadow: 10 10 10  #000000;
+    background-color: rgb(59, 75, 67);
+
 }
 
 // Mountain Shadow Blue: #101357

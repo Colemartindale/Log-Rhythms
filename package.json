@@ -21,14 +21,11 @@
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.50.1",
     "sass-loader": "^12.6.0",
+    "tone": "^14.7.77",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2"
   },
-
   "browserslist": [
     "defaults"
   ]
-  
 }
-
-
