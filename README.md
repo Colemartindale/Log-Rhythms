@@ -1,10 +1,10 @@
-# This here is Suave Sequences, the beat sequencer!
+# This here is Log Rhythms, the beat sequencer!
 
-Suave Sequences is a beat sequencer with several drumkit presets for anyone to make catchy and unique beats. The sequences loops while users select what and when a sound is played during the 8 bars given. Suave Sequences includes a normal drumkit and a not-so-normal drum kit made especially for fans of Super Smash Bros.
+Log Rhythms is a beat sequencer with several drumkit presets for anyone to make catchy and unique beats. The sequences loops while users select what and when a sound is played during the 8 bars given. Log Rhythms includes a normal drumkit and a not-so-normal drum kit made especially for fans of Super Smash Bros.
 
-[Take a look here!](https://github.com/Colemartindale/Suave-Sequences-JS-Project-)
+[Take a look here!](https://colemartindale.github.io/JS-Project-Log-Rhythms/)
 
-In Suave Sequences, users will be able to:
+In Log Rhythms, users will be able to:
 
 -Program which noises play at what time during the 8 bars by selecting a box that triggers the sound.
 -Select the tempo at which the beat will loop.
@@ -20,7 +20,7 @@ In addition, this project will include:
 
 ## Technologies, Libraries and APIs
 
-Suave Sequences will be made using JavaScript, HTML and CSS. CSS will be used to style everything while HTML will be used to structure the layout for the app. JavaScript will be used for the logical operations and functonality. 
+Log Rhythms will be made using JavaScript, HTML and CSS. CSS will be used to style everything while HTML will be used to structure the layout for the app. JavaScript will be used for the logical operations and functonality. 
 
 I may be using the Tone.js library for BPM(beats per minute) functionality and sound generation. This depends on whether or not I can figure out how to include audio files of my own. 
 
