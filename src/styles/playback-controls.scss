@@ -4,6 +4,8 @@
     align-items: center;
     margin: auto;
     margin-top: 10px;
+    width: 1000px;
+    position: relative;
 }
 
 #container {
@@ -78,3 +80,48 @@
 // Bluebell Light Blue: #00a0a0
 
 // Bold 2019 Green: #007f4f
+
+//volume slider
+
+.vol-slider-cont {
+    position: absolute;
+    right: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007f4f;
+    border: 1px solid black;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    padding: 3px;
+}
+
+.vol-slider-cont #vol-slider {
+    appearance: none;
+    background-color: black;
+    border-radius: 5px;   
+    height: 4px;
+    width: 80%;
+    line-height: 2;
+}
+
+.vol-slider-cont #vol-slider::-webkit-slider-thumb {
+    position: relative;
+    appearance: none;
+    background-color: black;
+    border-radius: 10px;
+    height: 23px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.vol-slider-cont #vol-slider::-webkit-slider-thumb:hover {
+    border: solid 0.5px aliceblue;    
+}
+
+.vol-slider-cont img {
+    padding: 5px;
+    width: 27px;
+}

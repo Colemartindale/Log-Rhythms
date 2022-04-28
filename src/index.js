@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.oninput = (() => {
         let val = slider.value;
         if (val < 100) {
-            currentTempo.innerHTML = "0" + val + " BPM"
+            currentTempo.innerHTML =  val + " BPM"
         } else {
             currentTempo.innerHTML = val + " BPM"
         }

@@ -4,6 +4,14 @@ import { Context } from 'tone';
 document.addEventListener("DOMContentLoaded", function () {
     const gain = new Tone.Gain(0.1);
     gain.toDestination()
+    const vol = new Tone.Volume(-15).toDestination();
+
+    const volSlider = document.getElementById("vol-slider");
+    Tone.getDestination().volume.rampTo(volSlider.value, 0.1);
+    volSlider.addEventListener('change', () => {
+        // console.log(volSlider.value);
+        Tone.getDestination().volume.rampTo(volSlider.value, 0.1);
+    });
 
     const kickDance = new Tone.Player('../assets/sounds/dance-kit/kick-dance.wav').toDestination();
     const snareDance = new Tone.Player('../assets/sounds/dance-kit/snare-dance.wav').toDestination();
@@ -15,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kickDance, snareDance, hatDance,
         tomDance, clapDance, crashDance
     ];
-    danceKit.forEach(sound => sound.connect(gain));
+    danceKit.forEach(sound => sound.connect(vol));
 
     const kickRock = new Tone.Player('../assets/sounds/rock-kit/kick-rock.wav').toDestination();
     const snareRock = new Tone.Player('../assets/sounds/rock-kit/snare-rock.wav').toDestination();
@@ -27,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kickRock, snareRock, hatRock,
         tomRock, clapRock, crashRock
     ];
-    rockKit.forEach(sound => sound.connect(gain));
+    rockKit.forEach(sound => sound.connect(vol));
 
 
     const kickFox = new Tone.Player('../assets/sounds/smash-kit/kick-fox.wav').toDestination();
@@ -40,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kickFox, snareFox, hatFox,
         tomFox, clapFox, crashFox
     ];
-    smashKit.forEach(sound => sound.connect(gain));
+    smashKit.forEach(sound => sound.connect(vol));
 
     
     let currentKit;
@@ -54,35 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(e.target.id === "rock-kit");
         if (e.target.id === "rock-kit") {
             currentKit = 2;
-            currentKitText.innerHTML="Rock Kit"
+            currentKitText.innerHTML="80s Kit"
         } else if (e.target.id === "dance-kit") {
             currentKit = 1;
-            currentKitText.innerHTML="Dance Kit"
+            currentKitText.innerHTML="Trap Kit"
         } else {
             currentKit = 3;
-            currentKitText.innerHTML="Fox Kit"
+            currentKitText.innerHTML="Star Fox Kit"
         }
     });
-
-    
-
-    // const container = document.getElementById('container');
-    // const canvas = document.getElementById("canvas");
-    // const ctx = canvas.getContext('2d');
-    // const playerCtx = new Context();
-    // const audioContext = new AudioContext();
-    // console.log(playerCtx);
-    // let audioSrc;
-    // let analyzer;
-
-    // let audio1 = new Audio();
-    // audio1.src = "../assets/sounds/smash-kit/snare-fox.wav"
-    // container.addEventListener('click', () => {
-    //     audio1.play()
-    //     audioSrc = audioContext.createMediaElementSource(audio1);
-    //     analyzer = audioContext.createAnalyser();
-    //     audioSrc.connect(analyzer);
-    // })
     
     
 
