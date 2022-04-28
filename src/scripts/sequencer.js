@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // console.log(toneVolume.value)
     });
 
-    const kickDance = new Tone.Player('/assets/sounds/dance-kit/kick-dance.wav').toDestination();
+    const kickDance = new Tone.Player('../assets/sounds/dance-kit/kick-dance.wav').toDestination();
     const snareDance = new Tone.Player('/assets/sounds/dance-kit/snare-dance.wav').toDestination();
     const hatDance = new Tone.Player('/assets/sounds/dance-kit/hat-dance.wav').toDestination();
     const tomDance = new Tone.Player('/assets/sounds/dance-kit/tom-dance.wav').toDestination();
