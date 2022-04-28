@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
     rockKit.forEach(sound => sound.connect(vol));
 
 
-    const kickFox = new Tone.Player('git/assets/sounds/smash-kit/kick-fox.wav').toDestination();
-    const snareFox = new Tone.Player('git/assets/sounds/smash-kit/snare-fox.wav').toDestination();
-    const hatFox = new Tone.Player('git/assets/sounds/smash-kit/hat-fox.wav').toDestination();
-    const tomFox = new Tone.Player('git/assets/sounds/smash-kit/tom-fox.wav').toDestination();
-    const clapFox = new Tone.Player('git/assets/sounds/smash-kit/clap-fox.wav').toDestination();
-    const crashFox = new Tone.Player('git/assets/sounds/smash-kit/crash-fox.wav').toDestination();
+    const kickFox = new Tone.Player('/assets/sounds/smash-kit/kick-fox.wav').toDestination();
+    const snareFox = new Tone.Player('/assets/sounds/smash-kit/snare-fox.wav').toDestination();
+    const hatFox = new Tone.Player('/assets/sounds/smash-kit/hat-fox.wav').toDestination();
+    const tomFox = new Tone.Player('/assets/sounds/smash-kit/tom-fox.wav').toDestination();
+    const clapFox = new Tone.Player('/assets/sounds/smash-kit/clap-fox.wav').toDestination();
+    const crashFox = new Tone.Player('/assets/sounds/smash-kit/crash-fox.wav').toDestination();
     const smashKit = [
         kickFox, snareFox, hatFox,
         tomFox, clapFox, crashFox
