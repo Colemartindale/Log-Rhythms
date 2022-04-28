@@ -125,3 +125,23 @@
     padding: 5px;
     width: 27px;
 }
+
+#vol-icon {
+    cursor: pointer;
+}
+
+#vol-icon:hover {
+    width: 32px;
+}
+
+.vol-slider-cont div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vol-icon-cont {
+    height: 30px;
+    width: 30px;
+}
+

@@ -28,7 +28,7 @@
     justify-content: center;
     align-items: center;
     background-color: #00a0a0 ;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     width: 991px;
     height: 40px;
 }
@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(174, 174, 174) ;
-    border-radius: 5px;
+    // border-radius: 5px;
     width: 991px;
     height: 40px;
     position: relative;
@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(42, 155, 117) ;
-    border-radius: 5px;
+    // border-radius: 5px;
     width: 991px;
     height: 40px;
 }
@@ -71,7 +71,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(135, 79, 181) ;
-    border-radius: 5px;
+    // border-radius: 5px 5px 0 0x;
     width: 991px;
     height: 40px;
     // #00a0a0
@@ -86,7 +86,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(174, 174, 174) ;
-    border-radius: 5px;
+    // border-radius: 5px;
     width: 991px;
     height: 40px;
 }
@@ -100,7 +100,7 @@
     justify-content: center;
     align-items: center;
     background-color: #00a0a0 ;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     width: 991px;
     height: 40px;
 }
@@ -183,7 +183,7 @@ input[type='checkbox'] {
 }
 
 .tom-checkbox-label input:hover {
-    background-color: #597c6f;
+    background-color: #ffe4ab;
 }
 
 .tom-checkbox-label input:checked:hover {
@@ -211,7 +211,7 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox'].current-pos {
-    border: white 1.5px solid;
+    border: antiquewhite 1.5px solid;
 }
 
 #current-kit {

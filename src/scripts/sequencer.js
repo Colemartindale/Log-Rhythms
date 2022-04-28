@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
         Tone.getDestination().volume.rampTo(volSlider.value, 0.1);
     });
 
+    const volIcon = document.getElementById('vol-icon');
+    // console.log(volIcon.src)
+    const toneVolume = Tone.getDestination().volume
+    toneVolume.value = -15
+    volIcon.addEventListener('click', () => {
+        if (toneVolume.value > -90) {
+            toneVolume.rampTo(-100, 0.1);
+            volIcon.src = "../assets/icons/mute-icon.png"
+        } else {
+            toneVolume.rampTo(volSlider.value, 0.1);
+            volIcon.src = "../assets/icons/volume-icon.png"
+        }
+        // console.log(toneVolume.value)
+    });
+
     const kickDance = new Tone.Player('../assets/sounds/dance-kit/kick-dance.wav').toDestination();
     const snareDance = new Tone.Player('../assets/sounds/dance-kit/snare-dance.wav').toDestination();
     const hatDance = new Tone.Player('../assets/sounds/dance-kit/hat-dance.wav').toDestination();
@@ -59,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const currentKitText = document.getElementById("current-kit");
     dropDown.addEventListener('click', (e)=> {
-        console.log(e.target.id === "rock-kit");
+        // console.log(e.target.id === "rock-kit");
         if (e.target.id === "rock-kit") {
             currentKit = 2;
             currentKitText.innerHTML="80s Kit"
@@ -88,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
             finalRows.push(rowList);
         });
         let step = index % 32;
-        console.log(step, 'step')
+        // console.log(step, 'step')
         // console.log(Tone.Transport.state)
         for (let i = 0; i < finalRows.length; i++) {
             let sound;
