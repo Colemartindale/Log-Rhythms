@@ -20,27 +20,27 @@ document.addEventListener("DOMContentLoaded", function () {
     volIcon.addEventListener('click', () => {
         if (toneVolume.value > -90) {
             toneVolume.rampTo(-100, 0.1);
-            volIcon.src = "../../assets/icons/mute-icon.png"
+            volIcon.src = "/assets/icons/mute-icon.png"
         } else {
             toneVolume.rampTo(volSlider.value, 0.1);
-            volIcon.src = "../../assets/icons/volume-icon.png"
+            volIcon.src = "/assets/icons/volume-icon.png"
         }
         // console.log(toneVolume.value)
     });
 
-    const kickDance = new Tone.Player('../../assets/sounds/dance-kit/kick-dance.wav').toDestination();
-    const snareDance = new Tone.Player('../../assets/sounds/dance-kit/snare-dance.wav').toDestination();
-    const hatDance = new Tone.Player('../../assets/sounds/dance-kit/hat-dance.wav').toDestination();
-    const tomDance = new Tone.Player('../../assets/sounds/dance-kit/tom-dance.wav').toDestination();
-    const clapDance = new Tone.Player('../../assets/sounds/dance-kit/clap-dance.wav').toDestination();
-    const crashDance = new Tone.Player('../../assets/sounds/dance-kit/crash-dance.wav').toDestination();
+    const kickDance = new Tone.Player('/assets/sounds/dance-kit/kick-dance.wav').toDestination();
+    const snareDance = new Tone.Player('/assets/sounds/dance-kit/snare-dance.wav').toDestination();
+    const hatDance = new Tone.Player('/assets/sounds/dance-kit/hat-dance.wav').toDestination();
+    const tomDance = new Tone.Player('/assets/sounds/dance-kit/tom-dance.wav').toDestination();
+    const clapDance = new Tone.Player('/assets/sounds/dance-kit/clap-dance.wav').toDestination();
+    const crashDance = new Tone.Player('..//assets/sounds/dance-kit/crash-dance.wav').toDestination();
     const danceKit = [
         kickDance, snareDance, hatDance,
         tomDance, clapDance, crashDance
     ];
     danceKit.forEach(sound => sound.connect(vol));
 
-    const kickRock = new Tone.Player('../../assets/sounds/rock-kit/kick-rock.wav').toDestination();
+    const kickRock = new Tone.Player('/assets/sounds/rock-kit/kick-rock.wav').toDestination();
     const snareRock = new Tone.Player('../../assets/sounds/rock-kit/snare-rock.wav').toDestination();
     const hatRock = new Tone.Player('../../assets/sounds/rock-kit/hat-rock.wav').toDestination();
     const tomRock = new Tone.Player('../../assets/sounds/rock-kit/tom-rock.wav').toDestination();
