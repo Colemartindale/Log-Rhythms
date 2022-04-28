@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hatDance = new Tone.Player('/assets/sounds/dance-kit/hat-dance.wav').toDestination();
     const tomDance = new Tone.Player('/assets/sounds/dance-kit/tom-dance.wav').toDestination();
     const clapDance = new Tone.Player('/assets/sounds/dance-kit/clap-dance.wav').toDestination();
-    const crashDance = new Tone.Player('..//assets/sounds/dance-kit/crash-dance.wav').toDestination();
+    const crashDance = new Tone.Player('/assets/sounds/dance-kit/crash-dance.wav').toDestination();
     const danceKit = [
         kickDance, snareDance, hatDance,
         tomDance, clapDance, crashDance
@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
     danceKit.forEach(sound => sound.connect(vol));
 
     const kickRock = new Tone.Player('/assets/sounds/rock-kit/kick-rock.wav').toDestination();
-    const snareRock = new Tone.Player('../../assets/sounds/rock-kit/snare-rock.wav').toDestination();
-    const hatRock = new Tone.Player('../../assets/sounds/rock-kit/hat-rock.wav').toDestination();
-    const tomRock = new Tone.Player('../../assets/sounds/rock-kit/tom-rock.wav').toDestination();
-    const clapRock = new Tone.Player('../../assets/sounds/rock-kit/clap-rock.wav').toDestination();
-    const crashRock = new Tone.Player('../../assets/sounds/rock-kit/crash-rock.wav').toDestination();
+    const snareRock = new Tone.Player('/assets/sounds/rock-kit/snare-rock.wav').toDestination();
+    const hatRock = new Tone.Player('/assets/sounds/rock-kit/hat-rock.wav').toDestination();
+    const tomRock = new Tone.Player('/assets/sounds/rock-kit/tom-rock.wav').toDestination();
+    const clapRock = new Tone.Player('/assets/sounds/rock-kit/clap-rock.wav').toDestination();
+    const crashRock = new Tone.Player('/assets/sounds/rock-kit/crash-rock.wav').toDestination();
     const rockKit = [
         kickRock, snareRock, hatRock,
         tomRock, clapRock, crashRock
@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
     rockKit.forEach(sound => sound.connect(vol));
 
 
-    const kickFox = new Tone.Player('../../assets/sounds/smash-kit/kick-fox.wav').toDestination();
-    const snareFox = new Tone.Player('../../assets/sounds/smash-kit/snare-fox.wav').toDestination();
-    const hatFox = new Tone.Player('../../assets/sounds/smash-kit/hat-fox.wav').toDestination();
-    const tomFox = new Tone.Player('../../assets/sounds/smash-kit/tom-fox.wav').toDestination();
-    const clapFox = new Tone.Player('../../assets/sounds/smash-kit/clap-fox.wav').toDestination();
-    const crashFox = new Tone.Player('../../assets/sounds/smash-kit/crash-fox.wav').toDestination();
+    const kickFox = new Tone.Player('git/assets/sounds/smash-kit/kick-fox.wav').toDestination();
+    const snareFox = new Tone.Player('git/assets/sounds/smash-kit/snare-fox.wav').toDestination();
+    const hatFox = new Tone.Player('git/assets/sounds/smash-kit/hat-fox.wav').toDestination();
+    const tomFox = new Tone.Player('git/assets/sounds/smash-kit/tom-fox.wav').toDestination();
+    const clapFox = new Tone.Player('git/assets/sounds/smash-kit/clap-fox.wav').toDestination();
+    const crashFox = new Tone.Player('git/assets/sounds/smash-kit/crash-fox.wav').toDestination();
     const smashKit = [
         kickFox, snareFox, hatFox,
         tomFox, clapFox, crashFox
