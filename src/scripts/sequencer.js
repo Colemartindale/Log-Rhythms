@@ -27,30 +27,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // console.log(toneVolume.value)
     });
-    console.log('helloworld');
-    const kickDance = new Tone.Player('assets/sounds/dance-kit/kick-dance.wav').toDestination();
+    // console.log('helloworld');
+    const kickTrap = new Tone.Player('assets/sounds/dance-kit/kick-dance.wav').toDestination();
     const snareDance = new Tone.Player('assets/sounds/dance-kit/snare-dance.wav').toDestination();
     const hatDance = new Tone.Player('assets/sounds/dance-kit/hat-dance.wav').toDestination();
     const tomDance = new Tone.Player('assets/sounds/dance-kit/tom-dance.wav').toDestination();
     const clapDance = new Tone.Player('assets/sounds/dance-kit/clap-dance.wav').toDestination();
     const crashDance = new Tone.Player('assets/sounds/dance-kit/crash-dance.wav').toDestination();
-    const danceKit = [
-        kickDance, snareDance, hatDance,
+    const trapKit = [
+        kickTrap, snareDance, hatDance,
         tomDance, clapDance, crashDance
     ];
-    danceKit.forEach(sound => sound.connect(vol));
+    trapKit.forEach(sound => sound.connect(vol));
 
-    const kickRock = new Tone.Player('assets/sounds/rock-kit/kick-rock.wav').toDestination();
-    const snareRock = new Tone.Player('assets/sounds/rock-kit/snare-rock.wav').toDestination();
-    const hatRock = new Tone.Player('assets/sounds/rock-kit/hat-rock.wav').toDestination();
-    const tomRock = new Tone.Player('assets/sounds/rock-kit/tom-rock.wav').toDestination();
-    const clapRock = new Tone.Player('assets/sounds/rock-kit/clap-rock.wav').toDestination();
-    const crashRock = new Tone.Player('assets/sounds/rock-kit/crash-rock.wav').toDestination();
-    const rockKit = [
-        kickRock, snareRock, hatRock,
-        tomRock, clapRock, crashRock
+    const kick80s = new Tone.Player('assets/sounds/rock-kit/kick-rock.wav').toDestination();
+    const snare80s = new Tone.Player('assets/sounds/rock-kit/snare-rock.wav').toDestination();
+    const hat80s = new Tone.Player('assets/sounds/rock-kit/hat-rock.wav').toDestination();
+    const tom80s = new Tone.Player('assets/sounds/rock-kit/tom-rock.wav').toDestination();
+    const clap80s = new Tone.Player('assets/sounds/rock-kit/clap-rock.wav').toDestination();
+    const crash80s = new Tone.Player('assets/sounds/rock-kit/crash-rock.wav').toDestination();
+    const the80skit = [
+        kick80s, snare80s, hat80s,
+        tom80s, clap80s, crash80s
     ];
-    rockKit.forEach(sound => sound.connect(vol));
+    the80skit.forEach(sound => sound.connect(vol));
 
 
     const kickFox = new Tone.Player('assets/sounds/smash-kit/kick-fox.wav').toDestination();
@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const tomFox = new Tone.Player('assets/sounds/smash-kit/tom-fox.wav').toDestination();
     const clapFox = new Tone.Player('assets/sounds/smash-kit/clap-fox.wav').toDestination();
     const crashFox = new Tone.Player('assets/sounds/smash-kit/crash-fox.wav').toDestination();
-    const smashKit = [
+    const foxKit = [
         kickFox, snareFox, hatFox,
         tomFox, clapFox, crashFox
     ];
-    smashKit.forEach(sound => sound.connect(vol));
+    foxKit.forEach(sound => sound.connect(vol));
 
     
     let currentKit;
@@ -108,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < finalRows.length; i++) {
             let sound;
             if (currentKit === 3) {
-                sound = smashKit[i];
+                sound = foxKit[i];
             } else if (currentKit === 2) {
-                sound = rockKit[i];
+                sound = the80skit[i];
             } else {
-                sound = danceKit[i];
+                sound = trapKit[i];
             }
             // console.log(sound, "SOUND")
             let row = finalRows[i];
@@ -185,11 +185,11 @@ document.addEventListener("DOMContentLoaded", function () {
             for (let j = 0; j < 32; j++) {
                 drum[j].addEventListener('click', () => {
                     if (currentKit === 3) {
-                        sound = smashKit[i];
+                        sound = foxKit[i];
                     } else if (currentKit === 2) {
-                        sound = rockKit[i];
+                        sound = the80skit[i];
                     } else {
-                        sound = danceKit[i];
+                        sound = trapKit[i];
                     }
                     sound.start();
                 });
