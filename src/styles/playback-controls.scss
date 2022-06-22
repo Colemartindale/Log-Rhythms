@@ -145,3 +145,78 @@
     width: 30px;
 }
 
+.instructions-container {
+    position: relative;
+    transform: translateX(-395px) translateY(-21px);
+}
+
+.instructions-btn {
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007f4f;
+    border: 1px solid black;
+    height: 40px;
+    width: 165px;
+    text-align: center;
+    padding: 8px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: #0b0b0b 1px 1px 1px 1px;
+}
+
+.instructions-btn:hover {
+    background-color: #006a41;
+}
+
+.instructions-btn:focus {
+    box-shadow: none;
+}
+
+.dropdown-menu-2 {
+    display: flex;
+    left: -135px;
+    top: -5px;
+    justify-content: center;
+    align-items: left;
+    position: absolute;
+    background-color: antiquewhite;
+    padding: 2px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0;
+    opacity: 0;
+    margin-top: 5px;
+    z-index: 2;
+}
+
+.dropdown-menu-2 button {
+    appearance: none;
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+    text-decoration: underline;
+	cursor: pointer;
+	outline: inherit;
+    color: black;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 3px;
+    z-index: 3;
+}
+
+.dropdown-menu-2 button:hover {
+    color: #909090;
+    font-size: 16px;
+}
+
+.instructions-container > .instructions-btn:focus + .dropdown-menu-2 {
+    opacity: 1; 
+}
+
