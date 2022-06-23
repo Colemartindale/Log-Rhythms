@@ -1,6 +1,6 @@
 # This here is Log Rhythms, the beat sequencer!
 
-Log Rhythms is a beat sequencer with several drumkit presets for anyone to make catchy and unique beats. The sequences loops while users select what and when a sound is played during the 8 bars given. Log Rhythms includes a normal drumkit and a not-so-normal drum kit made especially for fans of Super Smash Bros.
+Log Rhythms is a beat sequencer with several drum kit presets for anyone to make catchy and unique beats. The sequences loops while users select what and when a sound is played during the 8 bars given. Log Rhythms includes a normal drum kit and a not-so-normal drum kit made especially for fans of Super Smash Bros.
 
 [Take a look here!](https://colemartindale.github.io/Log-Rhythms/)
 
