@@ -15,7 +15,7 @@ In addition, this project will include:
 -Playback buttons such as play, pause and clear for seemless editing and creation.
 -A volume knob for users to crank their beats up or down depending on how they like it!
 
-![home page](http://url/to/img.png)
+![home page](https://github.com/Colemartindale/Log-Rhythms/blob/main/assets/homepage.png)
 
 [Wireframe sketch here](https://wireframe.cc/pro/pp/9c7cc4b95540657)
 
@@ -25,6 +25,6 @@ Log Rhythms is made using JavaScript, HTML and CSS. CSS will be used to style ev
 
 Tone.js library was used to seamlessly implement the looping of the sequencer with the scheduleRepeat function. 
 
-![featured code](http://url/to/img.png)
+![featured code](https://github.com/Colemartindale/Log-Rhythms/blob/main/assets/scheduleRepeat.png)
 
 Volume, tempo and playback controls were also coded using function from the Tone.js library.
