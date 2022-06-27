@@ -9,12 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const volSlider = document.getElementById("vol-slider");
     Tone.getDestination().volume.rampTo(volSlider.value, 0.1);
     volSlider.addEventListener('change', () => {
-        // console.log(volSlider.value);
         Tone.getDestination().volume.rampTo(volSlider.value, 0.1);
     });
 
     const volIcon = document.getElementById('vol-icon');
-    // console.log(volIcon.src)
     const toneVolume = Tone.getDestination().volume
     toneVolume.value = -15
     volIcon.addEventListener('click', () => {
@@ -25,9 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
             toneVolume.rampTo(volSlider.value, 0.1);
             volIcon.src = "assets/icons/volume-icon.png"
         }
-        // console.log(toneVolume.value)
     });
-    // console.log('helloworld');
+
     const kickTrap = new Tone.Player('assets/sounds/dance-kit/kick-dance.wav').toDestination();
     const snareDance = new Tone.Player('assets/sounds/dance-kit/snare-dance.wav').toDestination();
     const hatDance = new Tone.Player('assets/sounds/dance-kit/hat-dance.wav').toDestination();
@@ -74,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const currentKitText = document.getElementById("current-kit");
     dropDown.addEventListener('click', (e)=> {
-        // console.log(e.target.id === "rock-kit");
         if (e.target.id === "rock-kit") {
             currentKit = 2;
             currentKitText.innerHTML="80s Kit"
@@ -91,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     Tone.Transport.scheduleRepeat(looper, '8n');
     const rows = document.querySelectorAll('#row');
-    // console.log($rows);
     let index = 0;
     function looper(time) {
         let inputs = document.querySelectorAll('#row input');
@@ -99,12 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let finalRows = []
         rows.forEach((row) => {
             let rowList = row.querySelectorAll("input")
-            // console.log(rowList)
             finalRows.push(rowList);
         });
         let step = index % 32;
-        // console.log(step, 'step')
-        // console.log(Tone.Transport.state)
         for (let i = 0; i < finalRows.length; i++) {
             let sound;
             if (currentKit === 3) {
@@ -114,21 +106,13 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 sound = trapKit[i];
             }
-            // console.log(sound, "SOUND")
             let row = finalRows[i];
-            // console.log(row)
             let input = row[step];
-            // console.log(input)
             if (input.checked) sound.start();
-            // console.log(index, 'idx')
             input.classList.toggle('current-pos');
         }
         index++;
     }
-    // .addEventListener("playing", ()=> {
-    //     console.log('played sound');
-    // })
-    // console.log(Tone.Transport.state)
 
     
     const resetBtn = document.querySelector('.reset');
@@ -181,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < 6; i++) {
             let drum = drumIDs[i];
             let sound;
-            // console.log(currentKit)
             for (let j = 0; j < 32; j++) {
                 drum[j].addEventListener('click', () => {
                     if (currentKit === 3) {
@@ -201,7 +184,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const instBtn = document.getElementById("instructions-btn");
     const instructions = document.querySelectorAll(".inst");
-    // console.log(instructions)
     instBtn.onclick = () => {
         Array.from(instructions).forEach( instruction => {
             if (instruction.style.display === "none" || instruction.style.display === "") {
