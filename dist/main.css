@@ -424,7 +424,7 @@ input[type=checkbox].current-pos {
 
 .playback-controls {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: auto;
   margin-top: 10px;
@@ -494,8 +494,11 @@ input[type=checkbox].current-pos {
   width: 32px;
 }
 
+.bot-btns {
+  display: flex;
+}
+
 .vol-slider-cont {
-  position: absolute;
   right: 0;
   border-radius: 5px;
   display: flex;
@@ -556,14 +559,12 @@ input[type=checkbox].current-pos {
   width: 30px;
 }
 
-.instructions-container {
+.-container {
   position: relative;
   transform: translateX(-395px) translateY(-21px);
 }
 
-.instructions-btn {
-  position: absolute;
-  left: 0;
+#instructions-btn {
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -577,32 +578,29 @@ input[type=checkbox].current-pos {
   font-family: monospace;
   font-weight: 600;
   font-size: 20px;
+  z-index: 10;
   cursor: pointer;
   box-shadow: #0b0b0b 1px 1px 1px 1px;
 }
 
-.instructions-btn:hover {
+#instructions-btn:hover {
   background-color: #006a41;
 }
 
-.instructions-btn:focus {
+#instructions-btn:focus {
   box-shadow: none;
 }
 
 .dropdown-menu-2 {
   display: flex;
-  left: -135px;
-  top: -5px;
   justify-content: center;
-  align-items: left;
-  position: absolute;
-  background-color: antiquewhite;
-  padding: 2px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px 0;
-  opacity: 0;
-  margin-top: 5px;
+  position: relative;
+  width: 0px;
+  height: 0px;
   z-index: 2;
+}
+.dropdown-menu-2 > * {
+  z-index: -3;
 }
 
 .dropdown-menu-2 button {
@@ -662,6 +660,52 @@ input[type=checkbox].current-pos {
 }
 .links-container .fa-user:hover {
   transform: scale(1.2);
+}
+
+.inst {
+  display: none;
+  background-color: antiquewhite;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px;
+  width: 225px;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.tempo-inst {
+  top: -465px;
+  right: -219px;
+  width: 200px;
+  position: absolute;
+}
+
+.kits-inst {
+  top: -452px;
+  right: -1000px;
+  position: absolute;
+}
+
+.volume-inst {
+  right: -1002px;
+  top: 3px;
+  position: absolute;
+}
+
+.grid-inst {
+  top: -480px;
+  right: -700px;
+  position: absolute;
+  flex-direction: column;
+}
+
+.close-inst {
+  position: absolute;
+  right: -160px;
+  top: 3px;
+  width: 137px;
 }
 
 body {

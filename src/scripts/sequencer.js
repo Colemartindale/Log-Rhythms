@@ -199,6 +199,19 @@ document.addEventListener("DOMContentLoaded", function () {
     clicker();
 
 
+    const instBtn = document.getElementById("instructions-btn");
+    const instructions = document.querySelectorAll(".inst");
+    // console.log(instructions)
+    instBtn.onclick = () => {
+        Array.from(instructions).forEach( instruction => {
+            if (instruction.style.display === "none" || instruction.style.display === "") {
+                instruction.style.display = "flex";
+            } else {
+                instruction.style.display = "none";
+            }
+        });
+    };
+
     
 })
 

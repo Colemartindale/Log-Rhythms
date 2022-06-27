@@ -735,16 +735,34 @@
 
     <div class="playback-controls"> 
       <div class="instructions-container">
-        <button class="instructions-btn">Instructions</button>
+        <button id="instructions-btn">
+          Instructions
+        </button>
         <div class="dropdown-menu-2">
-          <p>Log Rhythms is used for programming your own beats 
-            by selecting a button representing when a sound will be triggered on different locations on a grid
-          </p>
+          <div class="tempo-inst inst">
+            Use this slider to adjust the speed of your beat.
+          </div>
+          <div class="kits-inst inst">
+            <p>Press this button to select between 3 unique drum kits.</p>
+          </div>
+          <div class="volume-inst inst">
+            <p>Use this slider to adjust the volume of your beat. Pressing the icon will mute and unmute the sound.</p>
+          </div>
+          <div class="grid-inst inst">
+            <p>Each row represents a different drum.</p>
+            <p>Each column represents a quarter note.</p>
+            <p>If a box is checked it will trigger the corresponding sound as the loop sequences.</p>
+          </div>
+          <div class="close-inst inst">
+            Click to close instructions
+          </div>
         </div>
       </div>
-      <button class="restart"><img src="./assets/icons/restart-icon.png"></button>
-      <button class="play-pause"><img src="./assets/icons/play-button-logo.png"><img src="./assets/icons/pause-btn-logo.png"></button>
-      <button class="reset">Clear</button>
+      <div class="bot-btns">
+        <button class="restart"><img src="./assets/icons/restart-icon.png"></button>
+        <button class="play-pause"><img src="./assets/icons/play-button-logo.png"><img src="./assets/icons/pause-btn-logo.png"></button>
+        <button class="reset">Clear</button>
+      </div>
       <div class="vol-slider-cont">
         <div class="vol-icon-cont">
           <img src="./assets/icons/volume-icon.png" id="vol-icon">
