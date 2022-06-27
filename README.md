@@ -6,14 +6,14 @@ Log Rhythms is a beat sequencer with several drum kit presets for anyone to make
 
 In Log Rhythms, users are able to:
 
--Program which noises play at what time during the 8 bars by selecting a box that triggers the sound.
--Select the tempo at which the beat will loop.
--Switch between drum kits for different and fun sounds.
+* -Program which noises play at what time during the 8 bars by selecting a box that triggers the sound.
+* -Select the tempo at which the beat will loop.
+* -Switch between drum kits for different and fun sounds.
 
 In addition, this project will include:
 
--Playback buttons such as play, pause and clear for seemless editing and creation.
--A volume knob for users to crank their beats up or down depending on how they like it!
+* -Playback buttons such as play, pause and clear for seemless editing and creation.
+* -A volume knob for users to crank their beats up or down depending on how they like it!
 
 ![home page](https://github.com/Colemartindale/Log-Rhythms/blob/main/assets/homepage.png)
 
