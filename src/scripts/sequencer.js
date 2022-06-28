@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropDown = document.querySelector(".dropdown-menu")
     
     const currentKitText = document.getElementById("current-kit");
-    dropDown.addEventListener('click', (e)=> {
+    dropDown.addEventListener('click', (e) => {
         if (e.target.id === "rock-kit") {
             currentKit = 2;
             currentKitText.innerHTML="80s Kit"
