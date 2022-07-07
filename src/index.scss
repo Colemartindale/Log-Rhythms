@@ -13,11 +13,12 @@ body {
 .title-logo-container {
     display: flex;
     background-size: auto;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 10px;
     align-items: center;
     background-color: #00a0a0;
     margin: auto;
-    width: 475px;
+    width: 480px;
     height: 150px;
     border: 1px solid black;
     margin-top: 2%;

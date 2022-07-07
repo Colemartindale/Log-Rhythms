@@ -210,15 +210,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
-    margin-top: 10px;
-    width: 140px;
+    height: 80%;
     border-radius: 10px;
     padding: 10px;
     position: relative;
     background-color: #00a0a0;
-    border: 1px solid black;
-    margin-top: 2rem;
+    flex-direction: column;
     
     a {
         margin-left: .5rem;
