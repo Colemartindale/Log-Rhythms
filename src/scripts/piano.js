@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const key = e.key;
         const whiteKeyIndex = WHITE_KEYS.indexOf(key);
         const blackKeyIndex = BLACK_KEYS.indexOf(key);
-
         if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex]);
         if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex]);
     });

@@ -184,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const instBtn = document.getElementById("instructions-btn");
     const instructions = document.querySelectorAll(".inst");
+    const keyboardInst = document.querySelectorAll(".keyboard-key");
     instBtn.onclick = () => {
         Array.from(instructions).forEach( instruction => {
             if (instruction.style.display === "none" || instruction.style.display === "") {
@@ -192,8 +193,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 instruction.style.display = "none";
             }
         });
+        Array.from(keyboardInst).forEach( keyInput => {
+            if (keyInput.style.display === "none" || keyInput.style.display === "") {
+                keyInput.style.display = "flex";
+            } else {
+                keyInput.style.display = "none";
+            }
+        });
     };
-
     
 })
 
