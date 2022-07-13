@@ -3,7 +3,7 @@
 @import "./styles/audio-visualizer.scss";
 @import "./styles/grid-design.scss";
 @import "./styles/playback-controls.scss";
-
+@import "./styles/piano.scss";
 
 body {
     background-color: #fea49f;
@@ -21,10 +21,10 @@ body {
     width: 480px;
     height: 150px;
     border: 1px solid black;
-    margin-top: 2%;
-    margin-bottom: 8%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     border-radius: 5px;
-}
+}   
 
 .logo {
     width: 375px;

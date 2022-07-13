@@ -1,0 +1,37 @@
+.piano * {
+    box-sizing: border-box;
+}
+
+.piano {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.key {
+    height: calc(var(--width) * 3);
+    width: var(--width);
+}
+
+.white {
+    --width: 50px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.white.active {
+    background-color: #ccc;
+}
+
+.black {
+    --width: 30px;
+    background-color: black;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+}
+
+.black.active {
+    background-color: #333;
+}

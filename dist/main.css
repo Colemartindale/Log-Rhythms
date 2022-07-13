@@ -206,7 +206,6 @@ table {
   flex-direction: column;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 5px;
-  height: 250px;
   width: 1000px;
   padding: 10px;
   background-color: #fbaf08;
@@ -705,6 +704,44 @@ input[type=checkbox].current-pos {
   width: 137px;
 }
 
+.piano * {
+  box-sizing: border-box;
+}
+
+.piano {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.key {
+  height: calc(var(--width) * 3);
+  width: var(--width);
+}
+
+.white {
+  --width: 50px;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.white.active {
+  background-color: #ccc;
+}
+
+.black {
+  --width: 30px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+
 body {
   background-color: #fea49f;
 }
@@ -720,8 +757,8 @@ body {
   width: 480px;
   height: 150px;
   border: 1px solid black;
-  margin-top: 2%;
-  margin-bottom: 8%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   border-radius: 5px;
 }
 
