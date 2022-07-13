@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
-    const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
+    const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm', 'q', 'w', 'e', 'r', 't', 'y', 'u'];
+    const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j', '2', '3', '5', '6', '7'];
 
     const keys = document.querySelectorAll(".key");
     const whiteKeys = document.querySelectorAll(".key.white");
