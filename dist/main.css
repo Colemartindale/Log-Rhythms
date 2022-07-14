@@ -207,7 +207,7 @@ table {
   border: solid 1px rgb(0, 0, 0);
   border-radius: 5px;
   width: 1000px;
-  padding: 10px;
+  padding: 1.5rem;
   background-color: #fbaf08;
   position: relative;
 }
@@ -712,7 +712,7 @@ input[type=checkbox].current-pos {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  position: relative;
 }
 
 .key {
@@ -728,6 +728,7 @@ input[type=checkbox].current-pos {
   --width: 50px;
   background-color: white;
   border: 1px solid #333;
+  border-radius: 0 0px 5px 5px;
 }
 
 .white.active {
@@ -739,6 +740,7 @@ input[type=checkbox].current-pos {
   background-color: black;
   margin-left: calc(var(--width) / -2);
   margin-right: calc(var(--width) / -2);
+  border-radius: 0 0px 5px 5px;
   z-index: 2;
   color: white;
 }
