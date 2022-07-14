@@ -16,7 +16,7 @@ In addition, this project will include:
 * Playback buttons such as play, pause and clear for seemless editing and creation.
 * A volume knob for users to crank their beats up or down depending on how they like it!
 
-![home page](https://github.com/Colemartindale/Log-Rhythms/blob/main/assets/homepage.png)
+![home page](https://github.com/Colemartindale/Log-Rhythms/blob/main/Screen%20Shot%202022-07-13%20at%209.43.58%20PM.png)
 
 [Wireframe sketch here](https://wireframe.cc/pro/pp/9c7cc4b95540657)
 
