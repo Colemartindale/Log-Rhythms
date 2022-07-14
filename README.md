@@ -9,6 +9,7 @@ In Log Rhythms, users are able to:
 * Program which noises play at what time during the 8 bars by selecting a box that triggers the sound.
 * Select the tempo at which the beat will loop.
 * Switch between drum kits for different and fun sounds.
+* Use mouse or keyboard to play a synth along their beat.
 
 In addition, this project will include:
 
