@@ -713,6 +713,7 @@ input[type=checkbox].current-pos {
   justify-content: center;
   margin-top: 1rem;
   position: relative;
+  border-top: 5px solid black;
 }
 
 .key {
@@ -770,7 +771,7 @@ body {
   align-items: center;
   background-color: #00a0a0;
   margin: auto;
-  width: 480px;
+  width: 481px;
   height: 150px;
   border: 1px solid black;
   margin-top: 1rem;
