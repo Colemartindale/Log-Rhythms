@@ -30,7 +30,20 @@ const config = {
       }
     ]
   },
-  plugins: [new MiniCssExtractPlugin()]
+  plugins: [new MiniCssExtractPlugin()],
+  optimization: {
+    usedExports: true,
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        }
+      }
+    }
+  }
 };
 
 module.exports = (env, argv) => {

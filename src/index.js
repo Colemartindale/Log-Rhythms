@@ -8,12 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentTempo = document.querySelector('.tempo span');
 
     slider.oninput = (() => {
-        let val = slider.value;
-        if (val < 100) {
-            currentTempo.innerHTML =  val + " BPM"
-        } else {
-            currentTempo.innerHTML = val + " BPM"
-        }
+        currentTempo.textContent = slider.value + " BPM";
     });
       
 })

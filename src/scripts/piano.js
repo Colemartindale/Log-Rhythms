@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         key.classList.add('active')
         setTimeout(() => {
             key.classList.remove('active')
-        }, "250")
+        }, 250)
     };
 
 })
