@@ -1,3 +1,42 @@
+.piano-sound-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+
+    label {
+        font-family: monospace;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    select {
+        appearance: none;
+        background-color: #007f4f;
+        color: inherit;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-family: monospace;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 4px 24px 4px 10px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23000'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+
+        &:hover {
+            background-color: #006a41;
+        }
+
+        &:focus {
+            outline: 2px solid #fbaf08;
+            outline-offset: 1px;
+        }
+    }
+}
+
 .piano * {
     box-sizing: border-box;
 }
@@ -5,7 +44,7 @@
 .piano {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     position: relative;
     border-top: 5px solid black;
 }

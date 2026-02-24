@@ -1,14 +1,7 @@
 import * as Tone from 'tone'
+import { vol, analyser } from './audio-bus'
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Increase lookAhead for more stable scheduling at high tempos
-    Tone.context.lookAhead = 0.05;
-
-    const vol = new Tone.Volume(-15).toDestination();
-
-    // Audio visualizer: connect an analyser to the output
-    const analyser = new Tone.Analyser('waveform', 256);
-    vol.connect(analyser);
 
     const canvas = document.querySelector('.audio-visualizer canvas');
     const ctx = canvas.getContext('2d');
