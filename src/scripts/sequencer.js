@@ -1,7 +1,42 @@
 import * as Tone from 'tone'
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Increase lookAhead for more stable scheduling at high tempos
+    Tone.context.lookAhead = 0.05;
+
     const vol = new Tone.Volume(-15).toDestination();
+
+    // Audio visualizer: connect an analyser to the output
+    const analyser = new Tone.Analyser('waveform', 256);
+    vol.connect(analyser);
+
+    const canvas = document.querySelector('.audio-visualizer canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function drawVisualizer() {
+        requestAnimationFrame(drawVisualizer);
+        const values = analyser.getValue();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        const sliceWidth = canvas.width / values.length;
+        let x = 0;
+        for (let i = 0; i < values.length; i++) {
+            const y = (values[i] + 1) / 2 * canvas.height;
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+            x += sliceWidth;
+        }
+        ctx.strokeStyle = '#fbaf08';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+    drawVisualizer();
 
     const volSlider = document.getElementById("vol-slider");
     vol.volume.rampTo(volSlider.value, 0.1);
@@ -51,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
         'assets/sounds/smash-kit/crash-fox.wav'
     ]);
 
-    
     const kits = { 1: trapKit, 2: the80skit, 3: foxKit };
     let currentKit = 1;
     const dropDown = document.querySelector(".dropdown-menu");
@@ -69,100 +103,117 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Cache all DOM references once instead of querying every beat tick
-    const rows = document.querySelectorAll('#row');
-    const allInputs = document.querySelectorAll('#row input');
+    // Cache all DOM references once
+    const rows = document.querySelectorAll('.row');
+    const allInputs = document.querySelectorAll('.row input');
     const rowInputs = [];
     rows.forEach((row) => {
         rowInputs.push(row.querySelectorAll("input"));
     });
 
     let index = 0;
+    let prevStep = -1;
     function looper(time) {
         const step = index % 32;
         const kit = kits[currentKit];
         for (let i = 0; i < rowInputs.length; i++) {
             const input = rowInputs[i][step];
-            if (input.checked) kit[i].start();
+            if (input.checked) kit[i].start(time);
         }
-        // Update visual position on the UI thread
         Tone.Draw.schedule(() => {
-            allInputs.forEach(input => input.classList.remove("current-pos"));
+            if (prevStep >= 0) {
+                for (let i = 0; i < rowInputs.length; i++) {
+                    rowInputs[i][prevStep].classList.remove('current-pos');
+                }
+            }
             for (let i = 0; i < rowInputs.length; i++) {
                 rowInputs[i][step].classList.add('current-pos');
             }
+            prevStep = step;
         }, time);
         index++;
     }
     Tone.Transport.scheduleRepeat(looper, '8n');
 
-    
     const resetBtn = document.querySelector('.reset');
     const playPauseBtn = document.querySelector('.play-pause');
+    const playIcon = playPauseBtn.querySelectorAll('img')[0];
+    const pauseIcon = playPauseBtn.querySelectorAll('img')[1];
     const restartBtn = document.querySelector('.restart');
     const slider = document.getElementById('slider');
+    let samplesReady = false;
+
+    // Show correct icon for initial state
+    pauseIcon.style.display = 'none';
+
+    function updatePlayPauseIcon() {
+        const playing = Tone.Transport.state === "started";
+        playIcon.style.display = playing ? 'none' : '';
+        pauseIcon.style.display = playing ? '' : 'none';
+    }
 
     slider.addEventListener('input', () => {
         Tone.Transport.bpm.rampTo(slider.value, 0.1);
     });
 
     resetBtn.addEventListener('click', () => {
+        Tone.Transport.stop();
         index = 0;
+        prevStep = -1;
         allInputs.forEach(input => {
             input.checked = false;
             input.classList.remove("current-pos");
         });
+        updatePlayPauseIcon();
     });
 
-    playPauseBtn.addEventListener('click', () => {
-        if (Tone.Transport.state === "stopped") {
-            Tone.start();
-            Tone.Transport.start();
+    async function togglePlayPause() {
+        await Tone.start();
+        if (!samplesReady) {
+            await Tone.loaded();
+            samplesReady = true;
+        }
+        if (Tone.Transport.state === "started") {
+            Tone.Transport.pause();
         } else {
-            Tone.Transport.stop();
+            Tone.Transport.start();
+        }
+        updatePlayPauseIcon();
+    }
+
+    playPauseBtn.addEventListener('click', togglePlayPause);
+
+    // Spacebar to play/pause
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+            e.preventDefault();
+            togglePlayPause();
         }
     });
 
     restartBtn.addEventListener('click', () => {
         Tone.Transport.stop();
         index = 0;
+        prevStep = -1;
         allInputs.forEach(input => input.classList.remove("current-pos"));
+        updatePlayPauseIcon();
     });
 
     // Event delegation: one listener on the grid instead of 192 individual ones
-    const drumIdToIndex = { 'kick': 0, 'snare': 1, 'hi-hat': 2, 'tom': 3, 'clap': 4, 'crash': 5 };
+    const drumNameToIndex = { 'kick': 0, 'snare': 1, 'hi-hat': 2, 'tom': 3, 'clap': 4, 'crash': 5 };
     const grid = document.querySelector('.sequence-grid');
     grid.addEventListener('click', (e) => {
         const input = e.target.closest('input[type="checkbox"]');
         if (!input) return;
-        const drumIndex = drumIdToIndex[input.id];
+        const drumIndex = drumNameToIndex[input.dataset.drum];
         if (drumIndex !== undefined) {
             kits[currentKit][drumIndex].start();
         }
     });
 
-
+    // Instructions toggle via CSS class
     const instBtn = document.getElementById("instructions-btn");
-    const instructions = document.querySelectorAll(".inst");
-    const keyboardInst = document.querySelectorAll(".keyboard-key");
-    instBtn.onclick = () => {
-        Array.from(instructions).forEach( instruction => {
-            if (instruction.style.display === "none" || instruction.style.display === "") {
-                instruction.style.display = "flex";
-            } else {
-                instruction.style.display = "none";
-            }
-        });
-        Array.from(keyboardInst).forEach( keyInput => {
-            if (keyInput.style.display === "none" || keyInput.style.display === "") {
-                keyInput.style.display = "flex";
-            } else {
-                keyInput.style.display = "none";
-            }
-        });
-    };
-    
+    instBtn.addEventListener('click', () => {
+        document.body.classList.toggle('show-instructions');
+    });
 })
-
-
-

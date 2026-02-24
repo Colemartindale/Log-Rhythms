@@ -7,12 +7,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const whiteKeys = document.querySelectorAll(".key.white");
     const blackKeys = document.querySelectorAll(".key.black");
 
+    // Preload all piano audio on first user interaction so notes play instantly
+    const pianoAudioElements = document.querySelectorAll('audio[id]');
+    let pianoPreloaded = false;
+    function preloadPianoAudio() {
+        if (pianoPreloaded) return;
+        pianoPreloaded = true;
+        pianoAudioElements.forEach(audio => {
+            audio.preload = 'auto';
+            audio.load();
+        });
+    }
+    document.addEventListener('click', preloadPianoAudio, { once: true });
+    document.addEventListener('keydown', preloadPianoAudio, { once: true });
+
     keys.forEach( key => {
         key.addEventListener("click", () => playNote(key))
     });
 
     document.addEventListener('keydown', e => {
-        if (e.repeat) return 
+        if (e.repeat) return
         const key = e.key;
         const whiteKeyIndex = WHITE_KEYS.indexOf(key);
         const blackKeyIndex = BLACK_KEYS.indexOf(key);
