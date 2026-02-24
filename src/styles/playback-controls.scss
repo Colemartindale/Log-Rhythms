@@ -17,7 +17,7 @@
     margin-bottom: 20px;
 }
 
-.play-pause {
+.play-pause, .restart, .reset {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,41 +25,17 @@
     background-color: #007f4f;
     border-radius: 5px;
     cursor: pointer;
-}
+    transition: background-color 0.15s ease;
 
-.play-pause:hover {
-    background-color: #006a41;
-}
-
-.restart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    background-color: #007f4f;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.restart:hover {
-    background-color: #006a41;
+    &:hover {
+        background-color: #006a41;
+    }
 }
 
 .reset {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    background-color: #007f4f;
-    border-radius: 5px;
     font-family: monospace;
     font-weight: 600;
     font-size: 20px;
-    cursor: pointer;
-}
-
-.reset:hover {
-    background-color: #006a41;
 }
 
 .play-pause img{
@@ -118,6 +94,7 @@
 
 #vol-icon {
     cursor: pointer;
+    transition: width 0.15s ease;
 }
 
 #vol-icon:hover {

@@ -94,6 +94,7 @@ input[type='checkbox'] {
     border: 1px solid black;
     border-radius: 9px;
     cursor: pointer;
+    transition: border-color 0.08s ease, background-color 0.1s ease, box-shadow 0.1s ease;
 }
 
 .kick-checkbox-label {
@@ -110,7 +111,8 @@ input[type='checkbox'] {
 .crash-checkbox-label { @include checkbox-colors($yellow, #ffe4ab); }
 
 input[type='checkbox'].current-pos {
-    border: antiquewhite 1.5px solid;
+    border: antiquewhite 2px solid;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.5);
 }
 
 #current-kit {

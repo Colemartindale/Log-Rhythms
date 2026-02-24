@@ -1,6 +1,9 @@
 import * as Tone from 'tone'
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Increase lookAhead for more stable scheduling at high tempos
+    Tone.context.lookAhead = 0.05;
+
     const vol = new Tone.Volume(-15).toDestination();
 
     // Audio visualizer: connect an analyser to the output
@@ -115,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const kit = kits[currentKit];
         for (let i = 0; i < rowInputs.length; i++) {
             const input = rowInputs[i][step];
-            // Schedule sounds at the exact audio clock time for tight timing
             if (input.checked) kit[i].start(time);
         }
         Tone.Draw.schedule(() => {
@@ -135,9 +137,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const resetBtn = document.querySelector('.reset');
     const playPauseBtn = document.querySelector('.play-pause');
+    const playIcon = playPauseBtn.querySelectorAll('img')[0];
+    const pauseIcon = playPauseBtn.querySelectorAll('img')[1];
     const restartBtn = document.querySelector('.restart');
     const slider = document.getElementById('slider');
     let samplesReady = false;
+
+    // Show correct icon for initial state
+    pauseIcon.style.display = 'none';
+
+    function updatePlayPauseIcon() {
+        const playing = Tone.Transport.state === "started";
+        playIcon.style.display = playing ? 'none' : '';
+        pauseIcon.style.display = playing ? '' : 'none';
+    }
 
     slider.addEventListener('input', () => {
         Tone.Transport.bpm.rampTo(slider.value, 0.1);
@@ -151,10 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
             input.checked = false;
             input.classList.remove("current-pos");
         });
+        updatePlayPauseIcon();
     });
 
-    playPauseBtn.addEventListener('click', async () => {
-        // Ensure audio context is running and all samples are loaded
+    async function togglePlayPause() {
         await Tone.start();
         if (!samplesReady) {
             await Tone.loaded();
@@ -165,6 +178,17 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             Tone.Transport.start();
         }
+        updatePlayPauseIcon();
+    }
+
+    playPauseBtn.addEventListener('click', togglePlayPause);
+
+    // Spacebar to play/pause
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+            e.preventDefault();
+            togglePlayPause();
+        }
     });
 
     restartBtn.addEventListener('click', () => {
@@ -172,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         index = 0;
         prevStep = -1;
         allInputs.forEach(input => input.classList.remove("current-pos"));
+        updatePlayPauseIcon();
     });
 
     // Event delegation: one listener on the grid instead of 192 individual ones
