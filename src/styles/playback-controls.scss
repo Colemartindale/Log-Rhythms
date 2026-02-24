@@ -256,6 +256,14 @@
     z-index: 1;
 }
 
+body.show-instructions .inst {
+    display: flex;
+}
+
+body.show-instructions .keyboard-key {
+    display: flex;
+}
+
 .tempo-inst {
     top: -640px;
     right: -219px;

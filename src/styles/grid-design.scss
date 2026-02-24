@@ -1,3 +1,32 @@
+$kick-color: #00a0a0;
+$snare-color: rgb(174, 174, 174);
+$hihat-color: rgb(42, 155, 117);
+$tom-color: rgb(135, 79, 181);
+$clap-color: rgb(174, 174, 174);
+$crash-color: #00a0a0;
+$yellow: #fbaf08;
+
+@mixin drum-row($bg, $radius: 0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg;
+    width: 991px;
+    height: 40px;
+    @if $radius != 0 {
+        border-radius: $radius;
+    }
+}
+
+@mixin checkbox-colors($checked-color, $hover-color) {
+    input:checked { background-color: $checked-color; }
+    input:hover { background-color: $hover-color; }
+    input:checked:hover {
+        background-color: $checked-color;
+        box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
+    }
+}
+
 .sequence-grid {
     margin: auto;
     display: flex;
@@ -6,15 +35,13 @@
     flex-direction: column;
     border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
-    // height: 250px;
     width: 1000px;
     padding: 1.5rem;
-    background-color: #fbaf08;
+    background-color: $yellow;
     position: relative;
 }
 
-
-#border {
+.border {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,89 +51,34 @@
 }
 
 .kick-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00a0a0 ;
-    border-radius: 5px 5px 0 0;
-    width: 991px;
-    height: 40px;
-}
-
-.kick-row #border:last-of-type {
-    border: none;
+    @include drum-row($kick-color, 5px 5px 0 0);
+    .border:last-of-type { border: none; }
 }
 
 .snare-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(174, 174, 174) ;
-    // border-radius: 5px;
-    width: 991px;
-    height: 40px;
+    @include drum-row($snare-color);
     position: relative;
-}
-
-.snare-row #border:last-of-type {
-    border: none;
+    .border:last-of-type { border: none; }
 }
 
 .hi-hat-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(42, 155, 117) ;
-    // border-radius: 5px;
-    width: 991px;
-    height: 40px;
-}
-
-.hi-hat-row #border:last-of-type {
-    border: none;
+    @include drum-row($hihat-color);
+    .border:last-of-type { border: none; }
 }
 
 .tom-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(135, 79, 181) ;
-    // border-radius: 5px 5px 0 0x;
-    width: 991px;
-    height: 40px;
-    // #00a0a0
-}
-
-.tom-row #border:last-of-type {
-    border: none;
+    @include drum-row($tom-color);
+    .border:last-of-type { border: none; }
 }
 
 .clap-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(174, 174, 174) ;
-    // border-radius: 5px;
-    width: 991px;
-    height: 40px;
-}
-
-.clap-row #border:last-of-type {
-    border: none;
+    @include drum-row($clap-color);
+    .border:last-of-type { border: none; }
 }
 
 .crash-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00a0a0 ;
-    border-radius: 0 0 5px 5px;
-    width: 991px;
-    height: 40px;
-}
-
-.crash-row #border:last-of-type {
-    border: none;
+    @include drum-row($crash-color, 0 0 5px 5px);
+    .border:last-of-type { border: none; }
 }
 
 .inst-icon {
@@ -114,8 +86,6 @@
     width: 30px;
     margin-left: 5px;
 }
-
-
 
 input[type='checkbox'] {
     appearance: none;
@@ -126,89 +96,18 @@ input[type='checkbox'] {
     cursor: pointer;
 }
 
-.kick-checkbox-label input:checked {
-    background-color: #fbaf08;
-}
-
-.kick-checkbox-label input:hover {
-    background-color: #ffe4ab;
-}
-
-.kick-checkbox-label input:checked:hover {
-    background-color: #fbaf08;
-    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
-}
-
-.hi-hat-checkbox-label input:checked {
-    background-color: antiquewhite;
-}
-
-.hi-hat-checkbox-label input:hover {
-    background-color: rgb(255, 226, 189);
-}
-
-.hi-hat-checkbox-label input:checked:hover {
-    background-color: antiquewhite;
-    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
-}
-
-.crash-checkbox-label input:checked {
-    background-color: #fbaf08;
-}
-
-.crash-checkbox-label input:hover {
-    background-color: #ffe4ab;
-}
-
-.crash-checkbox-label input:checked:hover {
-    background-color: #fbaf08;
-    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
-}
-
-.snare-checkbox-label input:checked {
-    background-color: rgb(135, 79, 181);
-}
-
-.snare-checkbox-label input:hover {
-    background-color: rgb(159, 134, 179);
-}
-
-.snare-checkbox-label input:checked:hover {
-    background-color: rgb(135, 79, 181);
-    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
-}
-
-.tom-checkbox-label input:checked {
-    background-color: #fbaf08;
-}
-
-.tom-checkbox-label input:hover {
-    background-color: #ffe4ab;
-}
-
-.tom-checkbox-label input:checked:hover {
-    background-color: #fbaf08;
-    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
-}
-
-.clap-checkbox-label input:checked {
-    background-color: rgb(135, 79, 181);
-}
-
-.clap-checkbox-label input:hover {
-    background-color: rgb(159, 134, 179);
-}
-
-.clap-checkbox-label input:checked:hover {
-    background-color: rgb(135, 79, 181);
-    box-shadow: 0 0 0.25em 0 rgb(255, 255, 255);
-}
-
 .kick-checkbox-label {
     display: flex;
     justify-content: center;
     align-items: center;
+    @include checkbox-colors($yellow, #ffe4ab);
 }
+
+.snare-checkbox-label { @include checkbox-colors($tom-color, rgb(159, 134, 179)); }
+.hi-hat-checkbox-label { @include checkbox-colors(antiquewhite, rgb(255, 226, 189)); }
+.tom-checkbox-label { @include checkbox-colors($yellow, #ffe4ab); }
+.clap-checkbox-label { @include checkbox-colors($tom-color, rgb(159, 134, 179)); }
+.crash-checkbox-label { @include checkbox-colors($yellow, #ffe4ab); }
 
 input[type='checkbox'].current-pos {
     border: antiquewhite 1.5px solid;
@@ -229,13 +128,3 @@ input[type='checkbox'].current-pos {
     text-align: center;
     box-shadow: 2px 2px 2px black;
 }
-
-// Mountain Shadow Blue: #101357
-
-// Old Makeup Pink: #fea49f
-
-// Goldenrod Yellow: #fbaf08
-
-// Bluebell Light Blue: #00a0a0
-
-// Bold 2019 Green: #007f4f
