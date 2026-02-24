@@ -115,9 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const kit = kits[currentKit];
         for (let i = 0; i < rowInputs.length; i++) {
             const input = rowInputs[i][step];
-            if (input.checked) kit[i].start();
+            // Schedule sounds at the exact audio clock time for tight timing
+            if (input.checked) kit[i].start(time);
         }
-        // Only touch 12 DOM elements per tick instead of 198
         Tone.Draw.schedule(() => {
             if (prevStep >= 0) {
                 for (let i = 0; i < rowInputs.length; i++) {
@@ -137,12 +137,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const playPauseBtn = document.querySelector('.play-pause');
     const restartBtn = document.querySelector('.restart');
     const slider = document.getElementById('slider');
+    let samplesReady = false;
 
     slider.addEventListener('input', () => {
         Tone.Transport.bpm.rampTo(slider.value, 0.1);
     });
 
     resetBtn.addEventListener('click', () => {
+        Tone.Transport.stop();
         index = 0;
         prevStep = -1;
         allInputs.forEach(input => {
@@ -151,12 +153,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    playPauseBtn.addEventListener('click', () => {
-        if (Tone.Transport.state === "stopped") {
-            Tone.start();
-            Tone.Transport.start();
+    playPauseBtn.addEventListener('click', async () => {
+        // Ensure audio context is running and all samples are loaded
+        await Tone.start();
+        if (!samplesReady) {
+            await Tone.loaded();
+            samplesReady = true;
+        }
+        if (Tone.Transport.state === "started") {
+            Tone.Transport.pause();
         } else {
-            Tone.Transport.stop();
+            Tone.Transport.start();
         }
     });
 
@@ -179,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Instructions toggle via CSS class (no inline styles)
+    // Instructions toggle via CSS class
     const instBtn = document.getElementById("instructions-btn");
     instBtn.addEventListener('click', () => {
         document.body.classList.toggle('show-instructions');
